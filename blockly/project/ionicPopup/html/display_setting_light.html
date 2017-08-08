@@ -1,0 +1,82 @@
+<div ng-controller="lightSettingCtrl" class="setlights_box">
+    <div class="row setting-light-window">
+        <div class="col-20" style="width:20%">
+            <ul class="list setting-light-window" >
+                <div class="led_activebox" ng-if="isshow_select_all">
+                    <i class="ion-android-checkbox-outline-blank checkbox1" ng-class="{'active':!lightData.islightLock}">
+                        <span data-val='on'>{{languageResource.select_all}}</span>
+                    </i>
+                    <i class="ion-android-checkbox checkbox1" ng-class="{'active':lightData.islightLock}">
+                        <span data-val='off' >{{languageResource.select_all}}</span>
+                    </i>
+                </div>
+                <li class="menuli" ng-repeat="led in lightData.lightArray track by $index" ng-click="changeLight(led, $index)">
+                    <div class="led-box" ng-class="{'led-box-sel':$index==curLEDlight.curLedIndex}">
+                        <span style="line-height: 0px">ID-{{led.id}}</span>
+                        <div class="led-color-div">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-80" style="overflow: hidden;position:relative;">
+            <div class="row right-box setlight-contentbox">
+                <div class="colorwheel_box">
+                    <input id="ledPartSelected" name="ledPartSelected" type="hidden"  ng-model="lightParam.ledPartSelected">
+                    <input id="curLedIndex" name="curLedIndex" type="hidden" ng-model="lightParam.curLedIndex">
+                    <div class="doughunt-width">
+                        <div id="doughnutChart" style="width:145px;height:145px;">
+                        </div>
+                    </div>
+                    <div class="led_tagicon"></div>
+                </div>
+                <div class="colorblock-box">
+                    <span class="showStatusClass" ng-if="ledLight.link">
+                        <img src="images/popup/link/led.png" class="ledimg"/>
+                        <label>
+                            {{languageResource.disconnected}}
+                        </label>
+                    </span>
+                    <table class="color_table">
+                        <tr>
+                            <td>
+                                <span class="color1" data-index="1"></span>
+                            </td>
+                            <td>
+                                <span class="color2" data-index="2"></span>
+                            </td>
+                            <td>
+                                <span class="color3" data-index="3"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="color4" data-index="4"></span>
+                            </td>
+                            <td>
+                                <span class="color5" data-index="5"></span>
+                            </td>
+                            <td>
+                                <span class="color6" data-index="6"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="color7" data-index="7"></span>
+                            </td>
+                            <td>
+                                <span class="color12" data-index="11"></span>
+                            </td>
+                            <td>
+                                <span class="color12 closed_light" data-index="12">
+                                    <img src="images/popup/light/close_light.png">
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

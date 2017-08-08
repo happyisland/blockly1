@@ -1,0 +1,49 @@
+<div ng-controller="sceneLightCtrl" class="emotion-win">
+    
+    <div class="row">
+        <div class="col-20 row-menu">
+            <ul class="list">
+                <div class="led_activebox" ng-if="isshow_select_all">
+                    <i class="ion-android-checkbox-outline-blank checkbox1" ng-class="{'active':!sceneLightData.islightLock}">
+                        <span data-val='on'>{{languageResource.select_all}}</span>
+                    </i>
+                    <i class="ion-android-checkbox checkbox1" ng-class="{'active':sceneLightData.islightLock}">
+                        <span data-val='off' >{{languageResource.select_all}}</span>
+                    </i>
+                </div>
+                <li ng-repeat="led in sceneLightData.lightArray track by $index" ng-click="selectLight(led, $index)" 
+                    class="emotion-led-box-unsel" ng-class="{'emotion-led-box-sel':$index==curSceneLight.curLedIndex}">
+                    <div>ID-{{led.id}}</div>
+                    <div class="emotion-name">{{sceneLightsName[sceneLightData.lightArray[$index].emotionIndex-12]}}</div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-80">
+            <div class="row row-height scene_light_box">
+                <!-- <div class="scene_light_box"> -->
+                    <span class="showStatus_touch_scene" ng-if="ledLight.link">
+                        <img src="images/popup/link/led.png" class="ledimg"/>
+                        <label>
+                            {{languageResource.disconnected}}
+                        </label>
+                    </span>
+                    <ul class="scenelight_ul">
+                        <li ng-repeat="em in sceneLights track by $index" ng-class="{'active':$index==curSceneLight.emotionIndex-12}" style="margin:6px 20px;">
+                            <div class="sound_items_class face-box" ng-click="selectEmotion(em, $index)">
+                                <img ng-src="images/popup/emotion/{{em}}.png"/>
+                            </div>
+                            <div>
+                                <span ng-if="curLanguage=='zh-hans'||curLanguage=='zh-hant'">
+                                    {{sceneLightsName[$index]|cut:true:5:'..'}}
+                                </span>
+                                <span ng-if="curLanguage!='zh-hans'&&curLanguage!='zh-hant'">
+                                    {{sceneLightsName[$index]|cut:true:9:'..'}}
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>

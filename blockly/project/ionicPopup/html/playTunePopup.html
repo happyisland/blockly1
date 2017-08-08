@@ -1,0 +1,18 @@
+<div ng-controller="playTuneCtrl">
+    <div class="" style="width: 80%;margin: 10px auto;padding: 10px;height: 120px;border: solid 1px red;text-align:center">
+
+        <div style="width: 40px;
+                    height: 100px;
+                    line-height: 100px;
+                    border: solid 1px black;
+                    display: inline-block;
+                    text-align: center;
+                    background-color: yellow;
+                    margin-right: -4px;" 
+                    ng-repeat="item in tuneDataList track by $index" ng-click="playTune($index);">{{item.tune}}
+        </div>
+    
+    </div>
+
+
+</div>

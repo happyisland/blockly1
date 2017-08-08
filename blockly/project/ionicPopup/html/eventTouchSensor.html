@@ -1,0 +1,19 @@
+<div ng-controller="touchSensorCtrl" class="touch-sensor-win">
+    <span class="intro-icon">
+        <img src="images/popup/event/event_touch_intro.png">
+    </span>
+    <span class="showStatus_touch_scene" ng-if="touchLink.link">
+        <img src="images/popup/link/cupeng.png" class="ledimg"/>
+        <label>
+            {{languageResource.disconnected}}
+        </label>
+    </span>
+    <div class="touch-box">
+        <div class="touch-type" ng-repeat="item in touchData track by $index">
+            <div class="img-box" ng-click="changeStatus('{{item.val}}')" ng-class="{'selected': touchParam.status== '{{item.val}}'}">
+                <img ng-src="images/popup/event/event_{{item.id}}.png" ng-class="{'selected': touchParam.status== '{{item.val}}'}">
+            </div>
+            <span ng-class="{'selected': touchParam.status== '{{item.val}}'}">{{item.name}}</span>
+        </div>
+    </div>
+</div>

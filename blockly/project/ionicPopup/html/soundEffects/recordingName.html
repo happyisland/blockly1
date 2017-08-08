@@ -1,0 +1,23 @@
+<div ng-controller="soundEffectsCtrl" class="recording_name_class">
+    <div class="row input-box">
+        <div class="col col-100">
+            <span class="messageTip" ng-class="{'messageTip1': inputOnfocus||popupCommonParam.inputContent!=''}">
+                {{languageResource.recording_placeholder}}
+            </span>
+            <input id="recordingName" type="text" ng-model="popupCommonParam.inputContent" ng-blur="addPopupInputCheck()"  
+                ng-focus="changeTipPosition()" ng-change="addPopupInputCheck('1')" maxlength="16"/>
+            <div ng-class="{'hide': popupCommonParam.inputContent==''}">
+                <i class="ion-ios-close-outline ionic-close" ng-click="clearField();"></i>
+            </div>
+        </div>
+    </div>
+    <div class="valid_box" ng-class="{'hide': !inputOnfocus}">
+        <span class="valid_msg">{{popupCommonParam.ruleMsg}}</span>
+    </div>
+    <div class="row add_recording_btn_class">
+        <div class="col" ng-click="soundBus('dropRecording',null,null);">{{languageResource.recording_cancel}}</div>
+        <div class="col" ng-click="soundBus('recordingOK',null,null);">{{languageResource.recording_ok}}
+        </div>
+    </div>
+</div>
+

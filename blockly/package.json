@@ -1,0 +1,65 @@
+{
+  "name": "blockly",
+  "version": "1.0.0",
+  "description": "Blockly is a library for building visual programming editors.",
+  "keywords": [
+    "blockly"
+  ],
+  "scripts": {
+    "start": "watchify engine/ubt_blockly_app.js -v -t babelify -o ubtblockly.js",
+    "course": "watchify engine/ubt_blockly_course.js -v -t babelify -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/google/blockly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/google/blockly/issues"
+  },
+  "homepage": "https://developers.google.com/blockly/",
+  "author": {
+    "name": "Neil Fraser"
+  },
+  "license": "Apache-2.0",
+  "private": true,
+  "devDependencies": {
+    "css-loader": "^0.26.4",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "immutable": "^3.8.1",
+    "jshint": "latest",
+    "jsx-loader": "^0.13.2",
+    "react-html5video": "^2.1.0",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
+    "video.js": "^5.18.4",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "jshintConfig": {
+    "globalstrict": true,
+    "predef": [
+      "Blockly",
+      "goog",
+      "window",
+      "document",
+      "soy",
+      "XMLHttpRequest"
+    ],
+    "sub": true,
+    "undef": true,
+    "unused": true
+  },
+  "dependencies": {
+    "bluebird": "3.4.1",
+    "jquery": "^2.0.0",
+    "lodash": "^4.13.1",
+    "babelify": "^6.3.0",
+    "react": "^15.3.1-rc.2",
+    "react-dom": "^15.3.1-rc.2",
+    "watchify": "^3.4.0",
+    "chai": "~3.4.1",
+    "mocha": "~2.3.4",
+    "mochawesome": "~1.2.1"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="google" value="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>JIMU Blockly Course</title>
+  <!-- 由block目录下的core生成 -->
+  <script src="../blockly_compressed.js"></script>
+  <!-- 由block目录下的blocks生成 -->
+  <script src="../blocks_compressed.js"></script>
+  <!-- 由block目录下的generators/javascript生成 -->
+  <script src="../javascript_compressed.js"></script>
+  <link rel="stylesheet" href="./lib/prettify/prettify.css">
+  <link rel="stylesheet" type="text/css" href="../course.min.css">
+</head>
+<body>
+    <!-- 1 课程开始故事(结束故事)容器 -->
+    <div id="course_story"></div>
+    <!-- 2 课程指引介绍 容器 -->
+    <div id="guide_course" class="guide_container"></div>
+    <!-- 3 工作空间 -->
+    <div id="content_blocks" class="workspace"></div>
+    <!-- 4 返回按钮 -->
+    <div id="prog_return_div" class="returnbtn_container"></div>
+    <!-- 5 运行按钮 -->
+    <div id="prog_ctrl_div" class="runbtn_container flex"></div>
+    <!-- 6 蓝牙连接标识 -->
+    <div id="course_blueth"></div>
+    <!-- 7 课程帮助按钮 -->
+    <div id="course_taskbtn"></div>
+    <!-- 8 菜单锁容器 -->
+    <div id="menulock_box"></div>
+    <!-- 9 任务标题 -->
+    <div id="course_title"></div>
+    <!-- 10 任务帮助描述介绍 -->
+    <div id="course_container"></div>
+    <!-- 11 系统信息提示 -->
+    <div id="system_prompt"></div>
+    <!-- 12 传感器信息显示的框-->
+    <div id="infoShower"></div>
+    <!-- 13 显示红外信息内容-->
+    <div id="popupWindow"></div>
+    <!-- 14 信息提示 业务弹出框 -->
+    <div id="messagetip_div"></div>
+    <!-- 15 业务内容弹出框 -->
+    <div id="business_container"></div>
+</body>
+<script src="./lib/js/acorn_interpreter.js"></script>
+<script src="../course.bundle.js"></script>
+<script src="./lib/prettify/prettify.js"></script>
+</html>

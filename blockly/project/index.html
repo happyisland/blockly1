@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="google" value="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>JIMU Blockly</title>
+    <link rel="stylesheet" type="text/css" href="lib/ionic-v1.3.1/css/ionic.css"/>
+    <link rel="stylesheet" href="css/wheelcolorpicker.css">
+    <link rel="stylesheet" href="css/style.css?v=20171223_1656">
+    <link rel="stylesheet" href="./lib/prettify/prettify.css">
+    <link rel="stylesheet" href="css/notyf.min.css">
+    <link rel="stylesheet" href="css/video-js.min.css">
+    <link rel="stylesheet" href="css/react_test.css">
+
+    <!-- 由block目录下的core生成 -->
+    <script src="../blockly_compressed.js"></script>
+    <!-- 由block目录下的blocks生成 -->
+    <script src="../blocks_compressed.js"></script>
+    <!-- 由block目录下的generators/javascript生成 -->
+    <script src="../javascript_compressed.js"></script>
+    <!--   <script src="lib/js/jquery-1.9.1.js"></script>
+      <script src="lib/js/unslider.js"></script> -->
+</head>
+<body ng-app="myApp" ng-controller="actionDetailCtrl" id="bodyContent" ng-init="indexBus('init')">
+<!-- 指引介绍  -->
+<div id="guide_container"></div>
+<!-- 系统提示信息显示  类似U3D  begin -->
+<!--<div class="systemHintClass" ng-if="systemHint.show" ng-class="{'systemHintClass_out': systemHint.show}">{{systemHint.tips}}</div>-->
+<div class="systemHintClass" ng-if="systemHint.show" ng-class="systemHint.sysClass">{{systemHint.tips}}</div>
+<div id="infoShower"></div>
+<!-- 系统提示信息显示  类似U3D  end -->
+<div id="popupWindow"></div>
+
+<!-- 主界面左边返回按钮 -->
+<!-- 主界面左边返回按钮 -->
+<div class="index_top_left_btn return_box" ng-click="indexBus('exit');">
+    <i class="icon ion-chevron-left return_icon"></i>
+    <span id="go_back" ng-bind="languageResource.index_back"></span>
+</div>
+<!-- 主界面右边操作按钮 -->
+<div class="index_top_right_btn" ng-init="indexBus('checkBlueStatus');">
+    <div class="row">
+        <!--保存按钮-->
+        <div class="col" id="save">
+            <img src="images/index/bt_baocun.png" ng-click="indexBus('saveXml');"/>
+        </div>
+        <!--项目列表按钮-->
+        <div class="col">
+            <img src="images/index/bt_caidan.png" ng-click="indexBus('projectList')"/>
+        </div>
+        <!--swift语言-->
+        <div class="col" id="show_swift">
+            <img src="images/index/bt_bianji.png"/>
+        </div>
+        <!--蓝牙连接-->
+        <div class="col">
+            <img id="blueImg" ng-click="indexBus('blueConnect')">
+        </div>
+        <!-- 帮助介绍 -->
+        <div class="col">
+            <img src="images/index/btn_help.png" ng-click="openModal('help');"/>
+        </div>
+    </div>
+</div>
+<!--  工作空间 -->
+<div class="workspace" id="content_blocks"></div>
+<!-- 运行按钮 -->
+<div id="prog_ctrl_div" class="index_bottom_btn flex">
+</div>
+
+<!-- 菜单栏 -->
+<xml id="toolbox" style="display: none">
+    <!--开始-->
+    <category id="id_start" default="true">
+        <block type="program_goto_start"></block>
+        <!--<block type="program_goto_condition"></block>-->
+        <!--<block type="statement_emotion_rgb_all_color_picker"></block>-->
+        <block type="program_goto_phone_condition"></block>
+        <block type="program_goto_touch_condition"></block>
+        <block type="program_goto_infrared_condition"></block>
+    </category>
+    <!--运动-->
+    <category id="id_actions">
+        <block type="movement_servo_change_angle_multi"></block>
+        <block type="movement_servo_rotate_circle"></block>
+        <!--<block type="movement_servo_power_control"></block>-->
+        <block type="movement_servo_status_read"></block>
+    </category>
+    <!--控制-->
+    <category id="id_control">
+        <block type="custom_control_if"></block>
+        <block type="custom_control_if_else"></block>
+        <!--<block type="custom_control_repeat_while_until"></block>-->
+        <block type="custom_control_while_do"></block>
+        <block type="custom_control_do_while"></block>
+        <block type="custom_control_wait_for"></block>
+        <block type="custom_control_repeat_times">
+            <value name="CUSTOM_CONTROL_REPEAT_TIMES">
+                <shadow type="custom_math_num">
+                    <field name="NUM">3</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="custom_control_wait_seconds">
+            <value name="CUSTOM_CONTROL_WAIT_SECONDS">
+                <shadow type="custom_math_num">
+                    <field name="NUM">5000</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+    <!--事件-->
+    <category id="id_events">
+        <block type="event_mainboard_power"></block>
+        <block type="event_infrared_sensor"></block>
+        <!-- <block type="event_touch_sensor"></block> -->
+        <block type="event_gyroscope"></block>
+        <block type="event_phone_pad_tilt"></block>
+    </category>
+    <!--展示-->
+    <category id="id_show">
+        <block type="id_show_play_effects"></block>
+        <block type="id_show_play_tune"></block>
+        <block type="id_show_emoji">
+            <value name="value_input">
+                <shadow type="custom_math_num">
+                    <field name="NUM">3</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="id_show_scenelight">
+            <value name="value_input">
+                <shadow type="custom_math_num">
+                    <field name="NUM">3</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="id_show_led">
+            <value name="value_input">
+                <shadow type="custom_math_num">
+                    <field name="NUM">3000</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+    <!--感知-->
+    <category id="id_sensors">
+        <block type="sensor_infrared_sensor_distance"></block>
+        <!--<block type="sensor_touch_sensor_status"></block>-->
+        <block type="sensor_gyroscope_sensor_angle"></block>
+        <block type="sensor_servo_angle"></block>
+        <block type="sensor_set_gyrocope_to_zero"></block>
+    </category>
+    <!--数学-->
+    <category id="id_math">
+        <block type="custom_math_num"></block>
+        <block type="custom_math_variables_get"></block>
+        <block type="custom_math_variables_set">
+            <value name="VALUE">
+                <shadow type="custom_math_num">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="custom_math_variable_change">
+            <value name="value_input">
+                <shadow type="custom_math_num">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="custom_math_add_minus">
+            <value name="FIRST_EXPRESSION">
+                <shadow type="custom_math_num">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="SECOND_EXPRESSION">
+                <shadow type="custom_math_num">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="custom_math_random_int">
+            <value name="FROM">
+                <shadow type="custom_math_num">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TO">
+                <shadow type="custom_math_num">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="custom_math_constrain">
+            <value name="VALUE">
+                <shadow type="custom_math_num">
+                    <field name="NUM">50</field>
+                </shadow>
+            </value>
+            <value name="LOW">
+                <shadow type="custom_math_num">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="HIGH">
+                <shadow type="custom_math_num">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="custom_math_logic_compare">
+        </block>
+        <block type="custom_math_logic_and"></block>
+        <block type="custom_math_logic_not"></block>
+    </category>
+</xml>
+
+
+<!-- js运行解析器 -->
+<!--<script src="./msg/zh-hans.js"></script>-->
+<script src="./lib/ionic-v1.3.1/js/ionic.bundle.min.js"></script>
+<script src="./lib/js/notyf.min.js"></script>
+
+<script src="./lib/js/acorn_interpreter.js"></script>
+<!-- package.json下的start脚本运行生成 -->
+<script src="../app.bundle.js"></script>
+<!--<script src="../core/css.js"></script>-->
+<!--<script src="../core/dropdowndiv.js"></script> -->
+<script src="../core/css.js"></script>
+<script type="text/javascript" src="./lib/js/iscroll.js"></script>
+<!--<script src="./ionicPopup/controller/app.js"></script>-->
+<script src="./lib/prettify/prettify.js"></script>
+
+</body>
+
+</html>

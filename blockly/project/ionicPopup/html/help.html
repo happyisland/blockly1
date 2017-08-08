@@ -1,0 +1,21 @@
+<ion-modal-view >
+    <ion-header-bar class="bar" style="height:44px;border-bottom: 1px #ddd solid;">
+        <table style="width:100%;height: 100%;">
+            <tr>
+                <td style="vertical-align: middle;width:10%;">
+                    <div ng-click="closeModal()" style="text-align: center;">
+                        <i class="icon ion-ios-arrow-left" style="color:#979797;font-size:28px;"></i>
+                    </div>
+                </td>
+                <td style="vertical-align: middle; text-align: center;">
+                    <h3 style="padding-right: 10%;">{{languageResource.help_title}}</h3>
+                </td>
+            </tr>
+        </table>
+    </ion-header-bar>
+    <ion-content style="overflow-y: scroll;" >
+        <div ng-repeat="help in helpList track by $index">
+            <img style="width:100%;" ng-src="{{help}}"/>
+        </div>
+    </ion-content>
+</ion-modal-view>

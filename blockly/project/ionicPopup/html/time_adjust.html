@@ -1,0 +1,16 @@
+<div id="changeTime" class="time_adjust_class" ng-controller="timeAdjustCtrl">
+    <div class="time_button icon ion-ios-minus busNumberShowClass" ng-class="{'disable_btn':servoTime.time==80}"
+        ng-click="changeTime('decrease');" on-touch="changeTime('decrease-touch');" on-release="changeTime('release');"></div>
+    <div class="time_bar">
+        <div class="time_show">{{servoTime.time}}ms</div>
+        <div class="time_range range">
+            <input type="range" name="time" min="80" max="5000" step="20" ng-model="servoTime.time" >
+        </div>
+        <div class="time_min_max">
+            <span>80ms</span>
+            <span>5000ms</span>
+        </div>
+    </div>
+    <div class="time_button icon ion-ios-plus busNumberShowClass" ng-class="{'disable_btn':servoTime.time==5000}"
+        ng-click="changeTime('increase');" on-touch="changeTime('increase-touch');" on-release="changeTime('release');"></div>
+</div>

@@ -1,0 +1,34 @@
+<div class="sound_effects_animal_class">
+    <div ng-if="listData.data.length==0" class="record_nodata_tips">
+        {{languageResource.recording_data_tips}}
+    </div>
+    <div  ng-if="listData.data.length>0" class="record_list">
+        <div class="sound_effects_list">
+            <ul class="ullist">
+                <li ng-repeat="data in listData.data track by $index" id="{{data.key}}" 
+                    ng-class="{'li_background':soundEffectObj.deleteOK!='ok' }">
+                    <span class="sound_effects_icon" ng-click="soundBus('chose',data,listData.type);" 
+                            ng-class="{true:'servo_status_close',false:'servo_status_no_close'}[data.key==soundEffectObj.currentChoseObj.key]" >
+                        <img ng-src="{{data.icon}}"/>
+                    </span>
+                    <span class="sound_effects_itemtext" 
+                        ng-class="{true:'color_chose',false:''}[data.key==soundEffectObj.currentChoseObj.key]">
+                        <label ng-if="data.description!=undefined">
+                            <span ng-if="curLanguage=='zh-hans'||curLanguage=='zh-hant'">
+                                {{data.description|cut:true:3:'..'}}
+                            </span>
+                            <span ng-if="curLanguage!='zh-hans'&&curLanguage!='zh-hant'">
+                                {{data.description|cut:true:6:'..'}}
+                            </span>
+                        </label>
+                    </span>
+                    <span class="icon-delete" ng-class="{'hidden':soundEffectObj.deleteOK!='ok' }" 
+                        ng-click="soundBus('deleteRecord',data,null);" >
+                        <i class="icon ion-ios-close-outline "></i>
+                    </span>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

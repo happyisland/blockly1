@@ -1,0 +1,124 @@
+.time_select {
+    float:left;
+    height:100%;
+}
+
+.left_button, .right_button{
+    width:20%;
+    position: relative;
+}
+
+.time_bar {
+    width:60%;
+}
+
+.icon_minus, .icon_add{
+    width:60px;
+    height: 60px;
+    /**background-color: green;*/
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    color:#4cd964;
+    font-size: 3em;
+}
+.time_bar_top, .time_bar_bottom {
+    color:#000;
+    font-size: 1.4em;
+    height:30%;
+    text-align: center;
+}
+
+.time_bar_content {
+    height:40%;
+    text-align: center;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}   
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    box-shadow: 1px 1px 1px #c1c1c1, inset 0 1px 1px #c1c1c1;
+    /*box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;// 轨道内置阴影效果*/
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}   
+
+
+.time_bar_content input {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.time_bar_content input {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 2px;
+    padding-left: 1px;
+    width: auto;
+    height: 43px;
+    outline: none;
+    /*background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ccc), color-stop(100%, #ccc));
+    background: linear-gradient(to right, #ccc 0%, #ccc 100%);
+    background-position: center;*/
+    background-size: 99% 2px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+}
+
+.min_value, .max_value {
+    display: inline-block;
+    width: 50%;
+    height:100%d;
+    color:#adadad;
+}
+
+.min_value {
+    text-align: left;
+}
+
+.max_value {
+    text-align: right;
+}
+
+video::cue {
+     background-image: linear-gradient(to bottom, papayawhip, papayawhip);
+     color: green;
+     visibility: none;
+     opacity: 0.8;
+}
+video::cue(b) {
+     color:green;  
+}

@@ -1,0 +1,130 @@
+/**
+ *容器的样式
+ */
+.common_container {
+    height: 100%;
+    width : 100%;
+}
+
+/**
+ * 容器内容均分五分的样式
+ */
+.item5 {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0;
+}
+
+.common_container .item5:nth-child(2) {
+    left: 20%;
+}
+
+.common_container .item5:nth-child(3) {
+    left: 40%;
+}
+
+.common_container .item5:nth-child(4) {
+    left: 60%;
+}
+
+.common_container .item5:nth-child(5) {
+    left: 80%;
+}
+
+/**
+ * 五分部分的单个选中的样式，包括图片和文本
+ */
+.item5.active .picture{
+    max-width: 80%;
+    border-color: #39c6ea;
+}
+.item5.active .text{
+    color: #39c6ea;
+}
+
+
+.item3 {
+    position: absolute;
+    height: 100%;
+    width: 33.3%;
+    left: 0;
+}
+
+.common_container .item3:nth-child(2) {
+    left: 33.3%;
+}
+.common_container .item3:nth-child(3) {
+    left: 66.7%;
+}
+
+/**
+ * 五分部分的单个选中的样式，包括图片和文本
+ */
+.item3.active .picture{
+    max-width: 52%;
+    border-color: #39c6ea;
+}
+.item3.active .text{
+    color: #39c6ea;
+}
+
+.item3.active .gyro_pic{
+    max-width: 90%;
+    width: 60%;
+    border-color: #39c6ea;
+}
+
+.phone_text {
+    position: absolute;
+    bottom: 14%;
+    left:0;
+}
+
+.touch_pic {
+    max-width: 40%;
+    border-radius: 20px;
+    border: solid 1px #e3e3e3;
+    top:0;
+    left:0;
+    margin:auto;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.gyro_pic {
+    max-width: 80%;
+    width: 50%;
+    border-radius: 20px;
+    border: solid 1px #e3e3e3;
+    top:0;
+    left:0;
+    margin:auto;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.phone_pic {
+    max-width: 50%;
+    border-radius: 20px;
+    border: solid 1px #e3e3e3;
+    top:0;
+    left:0;
+    margin:auto;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+
+.gyro_status {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: auto;
+}
+.gyro_status img{max-width:19px;margin-right:5px;position: absolute;
+    top: 0px;
+    left: -20px;}

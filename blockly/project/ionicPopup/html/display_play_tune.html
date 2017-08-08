@@ -1,0 +1,6 @@
+<div class="play-tune-win" ng-controller="displayTuneCtrl">
+    <div class="tune-box" ng-repeat="item in tuneNames track by $index" ng-click="changeTune('{{item}}');" ng-class="{'tune-box-selected':tuneParam.tune=='{{item}}'}">
+        <div><img src="images/popup/tune/tune.png" ng-class="{'selected':tuneParam.tune =='{{item}}'}"></div>
+        <span ng-class="{'selected':tuneParam.tune=='{{item}}'}">{{item}}</span>
+    </div>
+</div>

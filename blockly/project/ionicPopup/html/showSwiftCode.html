@@ -1,0 +1,28 @@
+<ion-modal-view ng-controller="swiftController" style="border-radius:8px;">
+    <ion-header-bar class="bar" style="height:51px;">
+        <table class="swift-code-title">
+            <tr>
+                <td class="lr-col">
+                    <div ng-click="goBack()" class="modalReturnBtn">
+                        <i class="icon ion-ios-arrow-left" style="color:#979797;"></i>
+                    </div>
+                </td>
+                <td style="vertical-align: middle; text-align: center;">
+                    <h3 class="popup-title">Swift</h3>
+                </td>
+                <td class="lr-col">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+    </ion-header-bar>
+    <ion-content style="margin-top:12px;text-align: left;" ng-init="getDescription()">
+        <div ng-if="description.content!=''" class ="swift-code-box" style="width:100%;padding-right:5%;padding-bottom: 2%;word-spacing:8px; letter-spacing: 1px;">
+            /**<br>
+            {{description.content}}
+            <br>*/
+        </div>
+        <!--<div ng-if="description.content!=''" style="width:100%;">{{description.content}}</div>-->
+        <div class="swift-code-box" ng-bind-html="swiftObj.code"></div>
+    </ion-content>
+</ion-modal-view>

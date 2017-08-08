@@ -1,0 +1,47 @@
+<div ng-controller="projectCtrl" >
+    <table class="project_list_head">
+        <tr>
+            <td class="project_list_head_btn list_head_left">
+                <div ng-click="goBack()">
+                    <i class="icon ion-ios-arrow-left"></i>
+                </div>
+            </td>
+            <td class="project_list_head_btn list_head_center">
+                <h3 class="popup-title">{{languageResource.project_list_title}}</h3>
+            </td>
+            <td class="project_list_head_btn list_head_right">
+                <div class="projectHomeBtn_01" ng-click="projectBus('edit',null);">
+                    <img ng-if="!projectBusObj.isDelete" src="images/popup/project/bt_bj.png" />
+                    <img ng-if="projectBusObj.isDelete" src="images/popup/project/bt_qd.png"/>
+                </div>
+                <div class="projectHomeBtn_02" ng-click="projectBus('add',null);">
+                    <img src="images/popup/project/bt_tj.png"/>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="project_list_class tip_center" id="project_list_class" ng-init="projectBus('init',null);">
+        <ul ng-class="{'hidden':projectData.length ==0 }">
+            <li class="item project_item" ng-repeat="project in projectData" data-index="{{project.xmlId}}">
+                <div class="row">
+                    <div class="col col_xmlName" ng-click="projectBus('read',project);">
+                        <span ng-if="project.isDefault" style="color:#33cdef;">
+                            <label ng-if="project.xmlNameLang!=undefined">{{project.xmlNameLang[languageCode]}}</label>
+                            <label ng-if="project.xmlNameLang==undefined">{{project.xmlName}}</label>
+                        </span>
+                        <span ng-if="!project.isDefault">{{project.xmlName}}
+                        </span>
+                    </div>
+                    <div class="col_xmlDel" >
+                        <span ng-if="projectBusObj.isDelete==true && project.isDefault == false" ng-click="projectBus('delete',project);">
+                            <i class="icon ion-ios-trash-outline" style="font-size:2em;color:red;"></i>
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div ng-class="{'hidden':projectData.length>0}" class="noproject_tip">
+            {{languageResource.no_project_tip}}
+        </div>
+    </div>
+</div>

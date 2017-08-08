@@ -1,0 +1,41 @@
+<div ng-controller="soundEffectsCtrl" class="sound_effects_class">
+    <div class="row">
+        <div class="col col-20">
+            <ul class="list menuListClass">
+                <li class="item" ng-repeat="sound in soundTypes track by $index" 
+                    ng-click="soundBus('menu',sound,$index);"
+                    ng-class="{'servo_choose_color':$index==soundEffectObj.menuIndex,'servo_un_choose':$index!=soundEffectObj.menuIndex}">
+                    <span class="menutext_class">
+                        {{sound.val}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ng-include src="temp_html_url"></ng-include>
+        </div>
+    </div>
+    <div class="blockly_delay_class flex">
+        <label class="toggle toggle-balanced">
+            <input type="checkbox" ng-model="soundEffectObj.isDelay" ng-change="soundBus('changeDelay',null,null)">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+        <label>{{languageResource.delay}}</label>
+    </div>
+    <div class="recording_operation_btns" ng-if="soundEffectObj.currentMenu=='recording'">
+        <label ng-click="soundBus('recordingBus','add',null);">
+            <i class="icon ion-ios-mic record-btns addrecord"></i>
+        </label>
+        <label ng-if="listData.data.length == 0">
+            <i class="icon ion-ios-trash-outline record-btns delete_diabled"></i>
+        </label>
+        <label ng-if="listData.data.length > 0" ng-click="soundBus('recordingBus','delete',null);">
+            <i ng-if="soundEffectObj.deleteOK=='no'"
+                class="icon ion-ios-trash-outline record-btns deleterecord"></i>
+            <i ng-if="soundEffectObj.deleteOK=='ok'" 
+                class="icon ion-android-done record-btns deleterecord"></i>
+        </label>
+    </div>
+</div>

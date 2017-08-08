@@ -1,0 +1,55 @@
+<div class="servoSpeedClass" ng-controller="servoStatusCtrl">
+    <div class="row" style="height:100%;">
+        <div class="col col-20 select_menu_id_class">
+            <ul class="list">
+                <li class="item" ng-repeat="servo in servoStatusList"
+                    ng-class="{'servo_choose_color':$index==selIndexObj.servoIndex,'servo_un_choose':$index!=selIndexObj.servoIndex}"
+                    ng-click="servoStatusBus('servoSel',servo,$index);" >
+                    <span >servo{{servo.servoId}}</span>
+                    <span style="display: block;" ng-if="servo.power=='on'">{{languageResource.servo_status_popup_locking}}</span>
+                    <span style="display: block;" ng-if="servo.power=='off'">{{languageResource.servo_status_popup_adjustable}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="setServer_status">
+                <li ng-class="{true:'active'}[selIndexObj.power=='on']">
+                    <span class="setserver_statusIcon" ng-click="servoStatusBus('close','on',null);">
+                        <img src="images/popup/movement/close.png"/>
+                    </span>
+                    <span class="setserver_statusText">
+                        {{languageResource.servo_status_popup_locking}}
+                    </span>
+                </li>
+                <li ng-class="{true:'active'}[selIndexObj.power=='off']">
+                    <span class="setserver_statusIcon" ng-click="servoStatusBus('close','off',null);">
+                        <img src="images/popup/movement/noClose.png"/>
+                    </span>
+                    <span class="setserver_statusText">
+                        {{languageResource.servo_status_popup_adjustable}}
+                    </span>
+                </li>
+            </ul>
+            <div style="clear: both;">
+                <span class="setServer_Tips">
+                    {{languageResource.servo_status_popup_tips}}
+                </span>
+            </div>
+            <!-- <div class="servo_status_setting">
+                <div class="servo_img_sel">
+                    <div class="img_col col_01">
+                        <div class="img_col_div"  ng-class="{true:'servo_status_close',false:'servo_status_no_close'}[selIndexObj.power=='on']"
+                             ng-click="servoStatusBus('close','on',null);"><img src="images/popup/movement/close.png"/></div>
+                        <div ng-class="{true:'color_chose',false:'color_no_chose'}[selIndexObj.power=='on']">{{languageResource.servo_status_popup_locking}}</div>
+                     </div>
+                    <div class="img_col col_02">
+                        <div class="img_col_div" ng-class="{true:'servo_status_close',false:'servo_status_no_close'}[selIndexObj.power=='off']"
+                             ng-click="servoStatusBus('close','off',null);"><img src="images/popup/movement/noClose.png"/></div>
+                        <div ng-class="{true:'color_chose',false:'color_no_chose'}[selIndexObj.power=='off']">{{languageResource.servo_status_popup_adjustable}}</div>
+                    </div>
+                </div>
+                <div class="servo_tips">{{languageResource.servo_status_popup_tips}}</div>
+            </div> -->
+        </div>
+    </div>
+</div>

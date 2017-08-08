@@ -1,0 +1,18 @@
+<div ng-controller="projectCtrl" class="project_name_class">
+    <div class="row input-box" ng-init="projectBus('addInit',null)">
+        <div class="col col-100">
+            <span class="messageTip" ng-class="{'messageTip1': inputOnfocus||popupCommonParam.inputContent!=''}">
+                {{languageResource.add_project_placeholder}}
+            </span>
+            <input id="projectName" type="text" ng-focus="changeTipPosition()" ng-model="popupCommonParam.inputContent" 
+                ng-change="projectNameCheck()" ng-blur="addPopupInputCheck()" maxlength="30" />
+            <div ng-class="{'hide': popupCommonParam.inputContent==''}">
+               <i class="ion-ios-close-outline ionic-close" ng-click="clearField();"></i>
+            </div>
+        </div>
+    </div>
+    <div class="valid_box" ng-class="{'hide': !inputOnfocus}">
+        <span class="valid_msg">{{popupCommonParam.ruleMsg}}</span>
+    </div>
+</div>
+

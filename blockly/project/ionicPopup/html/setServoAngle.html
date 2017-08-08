@@ -1,0 +1,79 @@
+<div ng-controller="servoAngleCtrl" class="servo_angle" ng-init="initData()">
+    <div class="row row_group">
+        <div class="col col-20">
+            <!-- 左边舵机选择菜单 -->
+            <ul class="menu_list">
+                <li ng-repeat="servo in servoAngleData track by $index"
+                    ng-click="doBus('servo',servo, $index)"
+                    ng-class="{'active':$index==servoAngleParam.servoIndex}">
+                    <span class="menutext_class">
+                        {{servo.servoId}}
+                    </span>
+                    <span class="servoangle_span" ng-if="servo.isClose">
+                        {{servo.angle}}<label ng-if="servo.type==0">°</label>
+                    </span>
+                    <span class="servoangle_span" ng-if="!servo.isClose">
+                        {{languageResource.servo_angle_popup_close}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="col clo-80">
+            <!-- 选择菜单 -->
+            <div class="row select_menu_class">
+                <div class="col col_1" ng-click="doBus('changeView',0,null)" ng-class="{'active':servoAngleParam.selectAngle}">
+                    {{languageResource.servo_angle_popup_angle}}
+                </div>
+                <div class="col col_2" ng-click="doBus('changeView',1,null)" ng-class="{'active':!servoAngleParam.selectAngle}">
+                    {{languageResource.servo_angle_popup_variable}}
+                </div>
+                <div class="col" >
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="servoAngleParam.isClose" ng-change="doBus('toggleChange',null,null);">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 设置角度 -->
+            <div class="set_angle_class"  ng-if="servoAngleParam.selectAngle" >
+                <div class="row" ng-init="doBus('angleInit',null, null)"
+                        ng-class="{'un_servoAngleSel':!servoAngleParam.isClose,'jiaoYuClass':servoAngleParam.platformType==2}">
+                    <div class="col-10 display_flex_class">
+                        <i id="ion-ios-minus-show" class="icon ion-ios-minus" 
+                            ng-class="{'disable_btn':servoAngleParam.angle==-118, 'enable_btn':servoAngleParam.angle!=-118}"
+                            on-touch="doBus('angle','decrease-touch',null);" on-release="doBus('angle','release',null);"
+                            ng-click="doBus('angle','decrease',null);"></i>
+                    </div>
+                    <div class="col display_flex_class">
+                        <div class="servo_angle_img">
+                            <img id="servoAngleImage" src="images/index/Servo.png"/>
+                            <div>
+                                <label>{{servoAngleParam.angle}}°</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 display_flex_class">
+                        <i id="ion-ios-plus-show" class="icon ion-ios-plus" 
+                            ng-class="{'disable_btn':servoAngleParam.angle==118, 'enable_btn':servoAngleParam.angle!=118}"
+                            on-touch="doBus('angle','increase-touch',null);" on-release="doBus('angle','release',null);"
+                            ng-click="doBus('angle','increase',null);"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 设置变量 -->
+            <div ng-if="!servoAngleParam.selectAngle" class="variable_box" ng-class="{'un_servoAngleSel':!servoAngleParam.isClose}">
+                <span class="variable_item" ng-repeat="vari in variableList track by $index" ng-click="doBus('variable',vari, $index)"
+                 ng-class="{'active':$index==servoAngleParam.variableIndex}">
+                    {{vari}}
+                </span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

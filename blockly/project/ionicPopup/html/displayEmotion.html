@@ -1,0 +1,108 @@
+<div ng-controller="emotionDisCtrl" class="emotion-win">
+    
+    <div class="row">
+        <div class="col-20 row-menu">
+            <ul class="list">
+                <div class="led_activebox" ng-if="isshow_select_all">
+                    <i class="ion-android-checkbox-outline-blank checkbox1" 
+                        ng-class="{'active':!emotionData.islightLock}">
+                        <span data-val='on'>{{languageResource.select_all}}</span>
+                    </i>
+                    <i class="ion-android-checkbox checkbox1" ng-class="{'active':emotionData.islightLock}">
+                        <span data-val='off' >{{languageResource.select_all}}</span>
+                    </i>
+                </div>
+                <li ng-repeat="led in emotionData.lightArray track by $index" 
+                    ng-click="selectLight(led, $index)" class="emotion-led-box-unsel" 
+                    ng-class="{'emotion-led-box-sel':$index==emotionParam.curLedIndex}">
+                    <div>ID-{{led.id}}</div>
+                    <div class="emotion-name">{{emotionsName[emotionData.lightArray[$index].emotionIndex]}}</div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-80">
+            <div class="row row-height setemotion-contentbox">
+                <div class="emotion_box">
+                    <div class="sound_effects_list">
+                        <ul>
+                            <li ng-repeat="em in emotions track by $index">
+                                <div class="sound_items_class face-box" ng-click="selectEmotion(em, $index)">
+                                    <img ng-src="images/popup/emotion/{{em}}.png"/>
+                                    <div class="color-box"></div>
+                                </div>
+                                <div>
+                                    <span ng-if="curLanguage=='zh-hans'||curLanguage=='zh-hant'">
+                                        {{emotionsName[$index]|cut:true:3:'..'}}
+                                    </span>
+                                    <span ng-if="curLanguage!='zh-hans'&&curLanguage!='zh-hant'">
+                                        {{emotionsName[$index]|cut:true:6:'..'}}
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="colorblock-box">
+                    <span class="showStatusClass" ng-if="ledLight.link">
+                        <img src="images/popup/link/led.png" class="ledimg" />
+                        <label>
+                            {{languageResource.disconnected}}
+                        </label>
+                    </span>
+                    <table class="color_table">
+                        <tr>
+                            <td>
+                                <span class="color1" data-index="1"></span>
+                            </td>
+                            <td>
+                                <span class="color2" data-index="2"></span>
+                            </td>
+                            <td>
+                                <span class="color3" data-index="3"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="color4" data-index="4"></span>
+                            </td>
+                            <td>
+                                <span class="color5" data-index="5"></span>
+                            </td>
+                            <td>
+                                <span class="color6" data-index="6"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="color7" data-index="7"></span>
+                            </td>
+                            <td>
+                                <span class="color11" data-index="11"></span>
+                            </td>
+                            <td>
+                                <span class="color12" data-index="12"></span>
+                            </td>
+                            <!-- <td>
+                                <span class="color8" data-index="8"></span>
+                            </td>
+                            <td>
+                                <span class="color9" data-index="9"></span>
+                            </td> -->
+                        </tr>
+                        <!-- <tr> -->
+                            <!-- <td>
+                                <span class="color10" data-index="10"></span>
+                            </td> -->
+                            
+                        <!-- </tr> -->
+                    </table>
+                </div>
+                <!-- <div class="color-picker">
+                    <div class="colorPicker-box" style="">
+                        <input id="colorPicker" type="text" class="colorpicker" />
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

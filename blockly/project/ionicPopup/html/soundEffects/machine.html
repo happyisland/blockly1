@@ -1,0 +1,22 @@
+ <div class="sound_effects_animal_class">
+    <div class="sound_effects_list">
+        <ul class="ullist">
+            <li ng-repeat="data in listData.data track by $index">
+                <span class="sound_effects_icon" ng-click="soundBus('chose',data,listData.type);" 
+                    ng-class="{true:'servo_status_close',false:'servo_status_no_close'}[data.key==soundEffectObj.currentChoseObj.key]" >
+                    <img ng-src="{{data.icon}}"/>
+                </span>
+                <span class="sound_effects_itemtext" 
+                    ng-class="{true:'color_chose',false:''}[data.key==soundEffectObj.currentChoseObj.key]">
+                    <span ng-if="curLanguage=='zh-hans'||curLanguage=='zh-hant'">
+                        {{data.description|cut:true:3:'..'}}
+                    </span>
+                    <span ng-if="curLanguage!='zh-hans'&&curLanguage!='zh-hant'">
+                        {{data.description|cut:true:6:'..'}}
+                    </span>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+</div>

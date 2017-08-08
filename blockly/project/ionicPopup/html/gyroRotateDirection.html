@@ -1,0 +1,51 @@
+<div class="gyro_rotate_direction_class" ng-controller="gyroRotateDirctionCtrl">
+    <div class="gyro_table_class" style="width:100%; color:#666666;" ng-init="getCurrentGyroInfo();">
+        <table>
+            <tr ng-class="{'show':gyroCurObj.hasGyro, 'hide':!gyroCurObj.hasGyro}">
+                <td>
+                    <img src="images/popup/link/tuoluoyi.png" class="gyro_img"/>
+                    <label>
+                        {{languageResource.gyro_rotate_direction_popup_curVal}} :
+                    </label>
+                </td>
+                <td class="gyro_td_class">
+                    <label>{{languageResource.x_axie}}:{{gyroCurObj.x_axie}}</label>
+                    <label>{{languageResource.y_axie}}:{{gyroCurObj.y_axie}}</label>
+                    <label>{{languageResource.z_axie}}:{{gyroCurObj.z_axie}}</label>
+                </td>
+            </tr>
+            <tr ng-class="{'hide':gyroCurObj.hasGyro, 'show':!gyroCurObj.hasGyro}">
+                <td>
+                    <img src="images/popup/gyro/gyro_lost.png" class="gyrolink_icon"/>
+                    <label>
+                        {{languageResource.disconnected}}
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="servo_img_sel" style="margin-bottom:10px; margin-top: 10px;">
+        <div class="img_col col_01">
+            <div class="img_col_div" ng-class="{true:'servo_status_close',false:'servo_status_no_close'}[gyroObj.direction=='z_axie']"
+                 ng-click="gyroRotateDirection('z_axie');">
+                <img src="images/popup/gyro/hangxiangjiao.png"/>
+            </div>
+            <div ng-class="{true:'color_chose',false:'color_no_chose'}[gyroObj.direction=='z_axie']">{{languageResource.z_axie}}</div>
+        </div>
+        <div class="img_col col_02">
+            <div class="img_col_div" ng-class="{true:'servo_status_close',false:'servo_status_no_close'}[gyroObj.direction=='x_axie']"
+                 ng-click="gyroRotateDirection('x_axie');">
+                <img src="images/popup/gyro/fuxiangjiao.png"/>
+            </div>
+            <div ng-class="{true:'color_chose',false:'color_no_chose'}[gyroObj.direction=='x_axie']">{{languageResource.x_axie}}</div>
+        </div>
+        <div class="img_col col_02">
+            <div class="img_col_div" ng-class="{true:'servo_status_close',false:'servo_status_no_close'}[gyroObj.direction=='y_axie']"
+                 ng-click="gyroRotateDirection('y_axie');">
+                <img src="images/popup/gyro/henggunjjiao.png"/>
+            </div>
+            <div ng-class="{true:'color_chose',false:'color_no_chose'}[gyroObj.direction=='y_axie']">{{languageResource.y_axie}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1980 @@
+/* 
+    *********************************
+    公共样式 2017-03-09 朱黎明
+ */
+html,body{
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding: 0;
+}
+/*处理移动端点击有阴影问题*/
+a,img,button,input,textarea,div{-webkit-tap-highlight-color:rgba(255,255,255,0);}
+.workspace {
+    overflow: hidden;
+}
+.blocklyTreeRoot {
+    border-color: #ddd;
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    margin:0;
+}
+.blocklyTreeRow{
+    border-top: 0px!important;
+    border-bottom: 1px solid #e2e1da;
+}
+.clear_div{
+    width:20px;
+    height:20px;
+    position:absolute;
+    border:1px solid #e2dfdf;
+    border-radius:30px;
+    float:right;
+    right:10px;top:12px;
+}
+.clear_div:before{top:50%;left:0;content:"";width:20px;height: 1px;position: absolute;
+    transform: rotate(45deg);-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg);/* Safari and Chrome */background: #e2dfdf;
+}
+.clear_div:after{
+    content:"";
+    position:absolute;
+    top: 50%;
+    left: 0;
+    width:20px;
+    height: 1px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg); /* IE 9 */
+    -webkit-transform: rotate(135deg); /* Safari and Chrome */
+    background: #e2dfdf;
+}
+/* 菜单锁样式 start*/
+.menulock_box {
+    position: absolute;
+    left: 0;
+    width: 126px!important;
+    background: rgba(221, 221, 221, 0.65);
+    height: 78.00%;
+    z-index: 9;
+    top: 10.11%;
+}
+.menulock_box>.lock_icon{
+    font-size: 2.6em;
+    color: #9a9a9a;
+}
+.menu_lock {
+    position: absolute;
+    left: 0;
+    width: 126px!important;
+    height: 11.11%;
+    z-index: 9;
+    background: rgba(221, 221, 221, 0.65);
+}
+.menu_lock>.lock_icon{
+    font-size: 1.6em;
+    color: #aaa;
+}
+.meun1_lock {
+    top: 10.96%;
+    /*background: rgba(10, 232, 192, 0.45);*/
+}
+.meun2_lock {
+    top: 22.05%;
+    /*background: rgba(45, 193, 234, 0.45);*/
+}
+.meun3_lock {
+    top: 33.15%;
+    /*background: rgba(125, 148, 225, 0.45);*/
+}
+.meun4_lock {
+    top: 44.25%;
+    /*background: rgba(253, 166, 116, 0.45);*/
+}
+.meun5_lock {
+    top: 55.35%;
+    /*background: rgba(81, 218, 109, 0.45);*/
+}
+.meun6_lock {
+    top: 66.35%;
+    /*background: rgba(255, 202, 5, 0.45);*/
+}
+.meun7_lock {
+    top: 77.68%;
+    /*background: rgba(128, 147, 149, 0.45);*/
+}
+/* 菜单锁样式 end*/
+
+/* led全选样式 */
+.led_activebox {
+    color: #39c6ea;
+    border-bottom: 1px solid #EAEAEA;
+    height: 42px;
+    text-align: center;
+}
+.led_activebox i {
+    font-size: 1.4em;
+    padding: 0 8px 0 6px;
+}
+/*led全选样式 */
+/*flex 盒子模型*/
+.flex {
+    /* 设置弹性布局 */
+    display: box;              /* OLD - Android 4.4- */
+    display:-webkit-box;/* android 2.1-3.0, ios 3.2-4.3 */
+    display:-webkit-flex;/* Chrome 21+ */
+    display:-ms-flexbox;/* WP IE 10 */
+    display:flex;/* android 4.4 */
+    /* 设置弹性布局的方向，子元素按照在源文档中声明的顺序从上到下显示 */
+    /* 09版 */
+    -webkit-box-orient: horizontal;/* android 2.1-3.0, ios 3.2-4.3 */
+    /* 12版 */
+    -webkit-flex-direction: row;/* Chrome 21+ */
+    -moz-flex-direction: row;/* WP IE 10 */
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    /* 水平布局下的子元素 水平居中 */
+    -webkit-box-pack: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-justify-content: center;/* Chrome 21+ */
+    -ms-flex-pack: center;/* WP IE 10 */
+    -moz-flex-pack: center;/* WP IE 10 */
+    -o-flex-pack: center;/* WP Opera 10 */
+    justify-content: center;/* android 4.4 */
+    /* 水平布局下的子元素 垂直居中 */
+    -webkit-box-align: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-align-items: center;/* Chrome 21+ */
+    -ms-flex-align: center;/* WP IE 10 */
+    -moz-flex-align: center;/* WP IE 10 */
+    -o-flex-align: center;/* WP Opera 10 */
+    align-items: center;/* android 4.4 */
+    /* 对齐弹性盒的 <div> 元素的各项：	 */
+    -webkit-justify-content: center; /* Safari 6.1+ */
+    -ms-justify-content: center;/* WP IE 10 */
+    -moz-justify-content: center;/* WP IE 10 */
+    -o-justify-content: center;/* WP Opera 10 */
+    justify-content: center;/* android 4.4 */
+    /* 居中对齐弹性对象元素内的某个项	 */
+    -webkit-align-self: center; /* Safari 7.0+ */
+    -ms-align-self: center;/* WP IE 10 */
+    -moz-align-self: center;/* WP IE 10 */
+    -o-align-self: center;/* WP Opera 10 */
+    align-self: center;
+
+    width: 100%;
+}
+/* 开关样式 开始 */
+.fa-toggle-off {
+    color: #7E7E7E;
+}
+.fa-toggle-on {
+    color: #4cd964;
+}
+.switch_box {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    width: 12%;
+    height: 20%;
+    z-index: 2;
+}
+.switch_icon{
+    font-size: 2.8em;
+}
+.reduce_icon , .add_icon {
+    color: #4cd964;
+    font-size: 2.8em;
+}
+/* 开关样式 结束*/
+/*业务弹出框 样式统一 start*/
+.blockly_background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(100, 100, 100, 0.8);
+    color:#fff;
+}
+.blockly_popup {
+    width: 86%;
+    height: 78%;
+    margin: 0 auto;
+    background: #fff;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    position: relative;
+}
+.blockly_popuphead , .blockly_popupfooter {
+    height: 14%;
+    font-size: 0.9em;
+    position: absolute;
+}
+.blockly_popuphead {
+    color: #000;
+    border-bottom: 1px solid #ddd;
+    top: 0;
+}
+.blockly_popupbody {
+    height: 72%;
+    position: absolute;
+    top: 14%;
+    color: #7E7E7E;
+    font-size: 0.9em;
+}
+.popupbody_menu {
+    position: absolute;
+    width: 20%;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    border-right: 1px solid #ddd;
+}
+.popupbody_content {
+    position: absolute;
+    width: 80%;
+    left: 20%;
+    top: 0px;
+    height: 100%;
+}
+.blockly_popupfooter {
+    color: #39c6ea;
+    border-top: 1px solid #ddd;
+    bottom: 0;
+}
+.btn_cancel, .btn_ok , .btn_block {
+    height: 100%;
+}
+.btn_cancel, .btn_ok {
+    width: 50%;
+}
+.btn_block {
+    width: 100%;
+}
+.btn_cancel{
+    border-right: 1px solid #ddd;
+}
+/*业务弹出框 样式统一 end*/
+
+/*提示弹出框 样式统一 start*/
+.messagetip_container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.messagetip_container .blockly_popup {
+    height: 43.8%;
+}
+.messagetip_container .blockly_popuphead , 
+.messagetip_container .blockly_popupfooter {
+    height: 16%;
+}
+.messagetip_container .blockly_popupbody {
+    height: 68%;
+    top: 16%;
+}
+/*提示弹出框 样式统一 end*/
+
+
+
+/*index 界面底部运行按钮  begin*/
+    .returnbtn_container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 126px;
+        height: 45px;
+        z-index: 12;
+        color: #5fb9fe;
+    }
+    .returnbtn_box, .executebtn_box {
+        height: 100%;
+        width: 100%;
+    }
+    .goback_btn, .return_icon {
+        display: inline-block;
+    }
+    .return_icon {
+        width: 40%;
+        font-size: 2em;
+        text-align: center;
+    }
+    .goback_btn {
+        width: 60%;
+        text-align: left;
+    }
+    .runbtn_container {
+        position: absolute;
+        bottom: 0px;
+        width: 126px;
+        color: #0ce7c0;
+    }
+    .execute_btn {
+        z-index: 13;
+        width: 100px!important;
+        background: #39c6ea;
+        color: #fff;
+        border-radius: 26px;
+        height: 38px;
+        text-align: center;
+    }
+    .execute_btn span {
+        margin-left: 6px;
+    }
+    .modalBackground {
+        width: 126px!important;
+        z-index: 12!important;
+    }
+
+/*index 界面底部运行按钮  end*/
+
+/* =========课程任务描述 开始=============================================================*/
+    .course_container {
+        position: absolute;
+        top: 0;
+        right: -46%;
+        width: 46%;
+        height: 100%;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+    }
+    .course_container.active{
+        right: 0;
+    }
+    .course_container.active .coursetask_btn {
+        left: 64px;
+    }
+    .course_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50px;
+        width: 50px;
+        z-index: 6;
+    }
+    .course_btn>img{
+        max-width: 45%;
+    }
+    .coursetask_btn, .bluetooth_box{
+        position: absolute;
+        top: 0px;
+        max-height: 54px;
+        max-width: 54px;
+        border-radius: 60px;
+        z-index: 4;
+        font-size: 2em;
+        color: #fff;
+    }
+    .coursetask_btn {
+        right: 8px;
+    }
+    .coursetask_btn>img{
+        max-width: 100%;
+    }
+    .bluetooth_box {
+        right: 78px;
+    }
+    .bluetooth_box>img {
+        max-width: 100%;
+    }
+
+    .course_introbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 999;
+    }
+    .code_content, .slide_content {
+        height: 100%;
+        padding: 0 15px;
+        position: relative;
+        overflow: hidden;
+    }
+    .story_container .slide_content, .blocklySvg {
+        background-size: cover;
+    }
+    .code_content>div:nth-child(1) {
+        height: 94%;
+        width: 100%;
+        color: red;
+    }
+    .slide_banner {
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        color: red;
+    }
+    .slide_banner>ul{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .story_container>div>div.slide_banner ,.story_container .slide_banner>ul{
+        height: 100%;
+    } 
+    .title_name {
+        text-align: center;
+        font-size: 16px;
+        color: green;
+    }
+    ul, ol { padding: 0;margin:0;}
+    .slide_banner { position: relative; overflow: auto; text-align: center;}
+    .slide_banner li { list-style: none; }
+    .slide_banner ul li { 
+        float: left;
+        height: 100%;
+        width: 100%;
+        display: none;
+        text-align: left;
+        transition:all 1s ease;
+    }
+    .story_container .slide_banner ul li{
+        position: relative;
+    }
+    .slide_banner ul li.active {
+        display: block;
+    }
+    .div_bgopcity {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    .slide_bottom {
+        position: absolute;
+        bottom: 2px;
+        width: 96%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .slide_bottom ol li {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+        text-indent: -999em;
+        border: 2px solid #fff;
+        background: #93939a; 
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: .8;
+        -webkit-transition: background .5s, opacity .5s;
+        -moz-transition: background .5s, opacity .5s;
+        transition: background .5s, opacity .5s;
+
+    }
+    .slide_bottom ol li.active{
+        background: #39c6ea;
+        opacity: 1;
+        transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        -moz-transform: scale(1.3);
+    }
+/* =========课程任务描述 结束=============================================================*/
+
+/* =========展示表情样式 开始=============================================================*/
+.emotion_box, .scenecolor_box {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 98%;
+    text-align: center;
+    font-size: 0.9em;
+    bottom: 2%;
+    overflow-y: auto;
+}
+.scenecolor_box{
+    overflow: hidden;
+}
+
+.emotion_list, .colorblock_list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+.colorblock_list {
+    top: 12%;
+    padding-bottom: 0;
+    height: 88%;
+    text-align: center;
+}
+.emotion_list_li{
+    width: 33%;
+    height: 30%;
+    float: left;
+    list-style: none;
+    position: relative;
+    margin:3% auto;
+}
+.emotion_item_box{
+    position: relative;
+    width: 86%;
+    height: 100%;
+  
+}
+.emotion_item_box.active{
+    border-radius: 8px;
+    border: 1px solid #39c6ea;
+}
+.emotion_item_box.active .emotion_img {
+    /*top: 19%;*/
+}
+.emotion_item_box.active .emotion_text {
+    bottom: 6%;
+}
+.emotion_item_box.active .colorShowdiv {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 24px;
+    height: 10px;
+    border-radius: 6px;
+    border:1px solid #000;
+}
+.colorblock_li {
+    width: 32%;
+    height: 32%;
+    margin: 0;
+    float: left;
+    list-style: none;
+    position: relative;
+}
+.color_text {
+    /*position: absolute;*/
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+}
+.color_text.active {
+    width: 78%;
+    height: 80%;
+    zoom: 0.8;
+    box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.24);
+}
+
+.emotion_img {
+    max-width: 100%;
+  /*  position: absolute;
+    top: 20%;*/
+}
+.emotion_text {
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0;
+    top: 55%;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+.colorblock_box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.scenelight_box {
+    position: absolute;
+    width: 98%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.scenelight_li {
+    height: 54%;
+    position: relative;
+}
+.scene_item_box {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 8px;
+}
+.scene_img {
+    position: absolute;
+    top: 20%;
+}
+.scene_text{
+    position: absolute;
+    bottom: 20%;
+}
+.scene_item_box.active {
+    border: 1px solid #39c6ea;
+    color:#39c6ea;
+}
+.colordisk_box {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 60%;
+    border: 1px solid #30dfdb;
+    box-shadow: 0px 0px 0px 9px #30dfdb;
+}
+.colordisk_box {
+    transform: scale(0.9);
+    -webkit-transform:scale(0.9);
+    -moz-transform:scale(0.9);
+    -o-transform:scale(0.9);
+}
+.colordisk_box:after {
+    content: '';
+    left: 50%;
+    bottom: -12px;
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    margin-left: -4px;
+    background: #fff;
+}
+.colordisk_box svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-22.5deg);
+}
+.pahtactive{
+    transform: scale(0.92);
+    transform-origin: center;
+}
+/* =========设置音调=============*/
+.playtone_list_box {
+    position: absolute;
+    width: 94%;
+    height: 100%;
+    margin:0;
+    padding: 0;
+    left: 0;
+}
+.tone_li {
+    width: 9.5%;
+    height: 86%;
+    list-style: none;
+    display: inline-block;
+    margin: 0 1.5%;
+    margin-top: 5.5%;
+}
+
+.tone_box {
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.tone_li.active .tone_box {
+    border: 1px solid #39c6ea;
+    transform: scale(1.05);
+}
+.tone_li.active .tone_text{
+    bottom: 20%;
+}
+.toneimg_box {
+    margin-top: -40%;
+}
+.toneimg_box img {
+    max-width: 60%;
+}
+.tone_text {
+    display: block;
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+/* ===设置音调 结束======*/
+/* ===设置音效 开始======*/
+.sound_list {
+    position: absolute;
+    width: 96%;
+    height: 93%;
+    padding: 0;
+    overflow-y: scroll;
+    font-size: 0.9em;
+    left: 0;
+    margin: 1% 2%;
+
+}
+.sound_list_li {
+    width: 20%;
+    height: 50%;
+    float: left;
+    position: relative;
+}
+.sound_list_li.active {
+    color: #39c6ea;
+}
+.sound_list_li.active .soundimg_box {
+    border:1px solid #39c6ea;
+    width: 76%;
+    height: 62%;
+    top: 12%;
+}
+.soundimg_box {
+    /*position: absolute;*/
+    top: 15%;
+    height: 56%;
+    width: 68%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.sound_text {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    display: block;top:85%;
+}
+.sound_opbtn_box {
+    position: absolute;
+    bottom: -3px;
+    right: 1%;
+    width: 16%;
+    height: 100%;
+    color: #2dc6ec;
+    font-size: 2.5em;
+}
+
+.switch_label {
+    position: absolute;
+    right: 7%;
+    top:-5%;
+}
+.add_recordbtn {
+    position: absolute;
+    width: 50%;
+    left: 0;
+}
+.del_recordbtn {
+    position: absolute;
+    width: 50%;
+    right: 0;
+}
+.item_delete_btn {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    height: 33%;
+    width: 33%;
+    text-align: center;
+    border: 1px solid red;
+}
+.clear_div.item_delete_btn:after, .clear_div.item_delete_btn:before {
+    width: 86%;
+    background: red;
+    text-align: center;
+    margin: 0 7%;
+}
+/* ===设置音效 结束======*/
+.recording_box {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left:0;
+    top:0;
+}
+.recordimg_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+   /* background: url('../images/popup/record/record.png') no-repeat 50% 30%;
+    background-size: 14%;*/
+    z-index: 2;
+    left:0;
+}
+.music_box {
+    z-index: 1;
+    position: relative;
+    width: 50%;
+    height: 90%;
+    /*margin: 0 25%;*/
+    text-align: center;
+    left: 0;
+}
+.music_box img{
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 100%;
+    height: auto;
+}
+.music_box span{  
+    width:2px;
+    position:absolute;  
+    background:#39c6ea;  
+    animation: bodong 0.8s infinite  ease; 
+    -webkit-animation: bodong 0.8s infinite  ease; 
+    -moz-animation: bodong 0.8s infinite  ease;
+    -o-animation: bodong 0.8s infinite  ease;
+}  
+@keyframes bodong{
+    0% {height:100px; }  
+    30%{height:40px; }  
+    60%{height:86px; }  
+    80%{height:20px; }  
+    100%{height:60px; }
+}
+@-webkit-keyframes bodong{
+    0% {height:100px; }  
+    30%{height:40px; }  
+    60%{height:86px; }  
+    80%{height:20px; }  
+    100%{height:60px; }
+}
+@-moz-keyframes bodong{
+    0% {height:100px; }  
+    30%{height:40px; }  
+    60%{height:86px; }  
+    80%{height:20px; }  
+    100%{height:60px; }
+}
+@-o-keyframes bodong{
+    0% {height:100px; }  
+    30%{height:40px; }  
+    60%{height:86px; }  
+    80%{height:20px; }  
+    100%{height:60px; }
+}
+.record_time {
+    position: absolute;
+    bottom: 8%;
+    left: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.input_box {
+    height: 34px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    font-size: 0.9em;
+}
+.input {
+    position: absolute;
+    outline: none;
+    height: 34px;
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    margin: 0;
+}
+.input_tips {
+    position: absolute;
+    top: 10px;
+    color: #39c6ea;
+    z-index: 2;
+    -webkit-transition: all .3s;
+    transition: all .3s; 
+}
+.input_tips.active {
+    top: -10px;
+}
+.input_rules {
+    position: absolute;
+    margin-top: 5%;
+    left: 10%;
+    font-size: 0.9em;
+}
+.video_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(100, 100, 100, 0.60);
+}
+.video_container>div {
+    position: absolute;
+    z-index: 9999;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    transition: all 0.5s;
+    transform: scale3d(0.02,0.02,0.02);
+    -webkit-transform: scale3d(0.02,0.02,0.02);
+    -moz-transform: scale3d(0.02,0.02,0.02);
+    -o-transform: scale3d(0.02,0.02,0.02);
+}
+.video_container>div.full_screen {
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+.story_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0px;
+    background: rgba(255, 252, 252, 0.91);
+    z-index: 999;
+}
+.close_icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 60px;
+    width: 60px;
+    z-index: 1000;
+    border-radius: 60px;
+    font-size: 1.8em;
+}
+.coursetitle_box {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 43px;
+    width: 40%;
+    margin: 0 30%;
+    background: rgb(255, 255, 255);
+    color: #39c6ea;
+    z-index: 994;
+    border-radius: 0 0 25px 25px;
+    border: 1px solid #ddd;
+    border-width: 0 1px 1px 1px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+}
+.coursetitle_box.active{
+    top: -43px;
+}
+.up_down_icon {
+    position: absolute;
+    bottom: -20px;
+    font-size: 2em;
+    width: 75px;
+    text-align: center;
+}
+.coursetitle_box:before{
+    content: '';
+    position: absolute;
+    bottom: -23px;
+    height:24px;
+    left:50%;
+    width: 72px;
+    margin-left: -36px;
+    background: url('../images/index/downupbtn.png') no-repeat center center;
+    background-size: 94%;
+    z-index: 9999;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    opacity: 0;
+}
+
+.videoicon_box{
+    position: absolute;
+    right: 22px;
+    height: 100%;
+    width: 42px;
+    font-size: 2em;
+}
+.videoicon_box>img {
+    max-width: 84%;
+}
+.videoicon_box:before{
+    content: '';
+    position: absolute;
+    height: 64%;
+    border: 1px solid #39c6ea;
+    left: -10px;
+}
+.course_task_page li>span>div:nth-child(1) {
+    margin-top: 6%!important;
+}
+.tpl_title_box {
+    text-align: center;
+    height: 40px;
+    font-size: 1.2em;
+    color: #101111;
+}
+.tpl_img_box {
+    height: auto;
+    margin: 15% 0;
+}
+.tpl_img_box img{
+    max-width: 94%;
+    max-height: 100%;
+}
+.tpl_text_box {
+    line-height: 1.6;
+    padding: 1px 10px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777B7C;
+}
+.tpl_btn_box {
+    margin: 4% 0;
+}
+.specialText_span{color:#39c6ea;}
+.tpl_btn {
+    border: 1px solid #39c6ea;
+    background: #fff;
+    height: 40px;
+    width: 110px;
+    border-radius: 10px;
+    color:#39c6ea;
+}
+.title_text {
+    display: block;
+    margin-right: 70px;
+    font-size: 0.9em;
+}
+/* =========展示表情样式 结束=============================================================*/
+
+/* 设置运行界面样式 start*/
+.currentInfraredIdClass {
+    position: absolute;
+    top: 60px;
+    right: 18px;
+    z-index: 6;
+    font-size: 10px;
+    background: #ffffff;
+    opacity: 0.6;
+    border-radius: 10px;
+    -webkit-box-shadow:0 0 2px #000 inset;
+    -moz-box-shadow:0 0 2px #000 inset;
+    box-shadow: 0 0 2px #000 inset;
+    border-color: #ffffff;
+    padding: 12px 12px 5px 12px;
+}
+.gyroClass{
+    line-height: 1.5;
+    width: auto;
+    /*margin: 0px 10px 0px 35px;*/
+    color: #013061;
+    /*padding-right: 10px;*/
+    text-align: right;
+}
+.gyro-x, .gyro-y, .gyro-z {
+    text-align: right;
+    margin-bottom: 5px;
+}
+.outer_gyroFontClass{
+    color:#013061;
+    font-weight: bold;
+}
+.gyroFontClass{
+    color: #002c62;}
+/* 设置运行界面样式end*/
+/* 课程故事样式 start*/
+.dialog_box {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.dialogimg_box {
+    position: absolute;
+}
+.left_imgbox {
+    display: none;
+    animation: img_move_right 800ms;
+    -webkit-animation:img_move_right 800ms;
+    -moz-animation:img_move_right 800ms;
+    -o-animation:img_move_right 800ms;
+}
+.left_text {
+    display: none;
+    animation: txt_move_right 600ms;
+    -webkit-animation:txt_move_right 600ms;
+    -moz-animation:txt_move_right 600ms;
+    -o-animation:txt_move_right 600ms;
+}
+.right_imgbox {
+    display: none;
+    animation: img_move_left 800ms;
+    -webkit-animation:img_move_left 800ms;
+    -moz-animation:img_move_left 800ms;
+    -o-animation:img_move_left 800ms;
+}
+.right_text {
+    display: none;
+    animation: txt_move_left 600ms;
+    -webkit-animation:txt_move_left 600ms;
+    -moz-animation:txt_move_left 600ms;
+    -o-animation:txt_move_left 600ms;
+}
+.dialogtxt_box {
+    position: absolute;
+    width: 312px;
+    padding: 0 15px;
+    height: 50px;
+    background: #fff;
+    border-radius: 60px;
+    color: #3D4564;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    transform-origin: left;
+}
+.dialogtxt_box.right_text {
+    transform-origin: right;
+}
+.left_text:before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 0;
+    height: 50px;
+    width: 18px;
+    background: url('../images/courses/l_combined.png') no-repeat;
+    background-position: center;
+}
+.right_text:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    height: 50px;
+    width: 18px;
+    background: url('../images/courses/r_combined.png') no-repeat;
+    background-position: center;
+}
+.story_img {
+    width: 120px;
+}
+/*课程故事动画*/
+@keyframes img_move_right {
+    from { left:-100px; opacity: 0}
+    to   { left:0px;opacity: 1}
+}
+    /* Firefox */
+    @-moz-keyframes img_move_right {
+        from { left:-100px; opacity: 0}
+        to   { left:0px;opacity: 1}
+    }
+    /* Safari 和 Chrome */
+    @-webkit-keyframes img_move_right {
+        from { left:-100px; opacity: 0}
+        to   { left:0px;opacity: 1}
+    }
+    /* Opera */
+    @-o-keyframes img_move_right {
+        from { left:-100px; opacity: 0}
+        to   { left:0px;opacity: 1}
+    }
+@keyframes txt_move_right {
+    from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+    to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+}
+    /* Firefox */
+    @-moz-keyframes txt_move_right {
+        from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+    }
+    /* Safari 和 Chrome */
+    @-webkit-keyframes txt_move_right {
+        from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+    }
+    /* Opera */
+    @-o-keyframes txt_move_right {
+        from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+    }
+@keyframes img_move_left {
+    from { right:-100px;opacity: 0}
+    to   { right:0px;opacity: 1}
+}
+    /* Firefox */
+    @-moz-keyframes img_move_left {
+        from { right:-100px;opacity: 0}
+        to   { right:0px;opacity: 1}
+    }
+    /* Safari 和 Chrome */
+    @-webkit-keyframes img_move_left {
+        from { right:-100px;opacity: 0}
+        to   { right:0px;opacity: 1}
+    }
+    /* Opera */
+    @-o-keyframes img_move_left {
+        from { right:-100px;opacity: 0}
+        to   { right:0px;opacity: 1}
+    }
+@keyframes txt_move_left {
+    from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+    to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+}
+    /* Firefox */
+    @-moz-keyframes txt_move_left {
+        from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+    }
+    /* Safari 和 Chrome */
+    @-webkit-keyframes txt_move_left {
+        from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+    }
+    /* Opera */
+    @-o-keyframes txt_move_left {
+        from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color:#3D4564;font-size: 1em;}
+    }
+/*课程故事动画*/
+
+/*new story style*/
+.storyitem_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9999;
+}
+.item_box {
+    position: absolute;
+    z-index: 999999;
+}
+.img_box {
+    width: 80px;
+}
+.img_left {
+    display: none;
+    animation: img_move_right 800ms;
+    -webkit-animation:img_move_right 800ms;
+    -moz-animation:img_move_right 800ms;
+    -o-animation:img_move_right 800ms;
+}
+.img_right {
+    display: none;
+    animation: img_move_left 800ms;
+    -webkit-animation:img_move_left 800ms;
+    -moz-animation:img_move_left 800ms;
+    -o-animation:img_move_left 800ms;
+}
+.text_left {
+    transform-origin: left;
+    display: none;
+    animation: txt_move_right 600ms;
+    -webkit-animation:txt_move_right 600ms;
+    -moz-animation:txt_move_right 600ms;
+    -o-animation:txt_move_right 600ms;
+}
+.text_right {
+    transform-origin: right;
+    display: none;
+    animation: txt_move_left 600ms;
+    -webkit-animation:txt_move_left 600ms;
+    -moz-animation:txt_move_left 600ms;
+    -o-animation:txt_move_left 600ms;
+}
+.text_box {
+    position: absolute;
+    /*width: 312px;*/
+    padding: 0 25px;
+    height: 50px;
+    background: #fff;
+    border-radius: 60px;
+    color: #3D4564;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    
+}
+
+.text_left:after{
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 0;
+    height: 50px;
+    width: 18px;
+    background: url('../images/courses/l_combined.png') no-repeat;
+    background-position: center;
+}
+.text_right:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    height: 50px;
+    width: 18px;
+    background: url('../images/courses/r_combined.png') no-repeat;
+    background-position: center;
+}
+.item_box img {
+    max-width: 100%;
+}
+
+/* 课程故事样式 end*/
+
+/*课程指引层*/
+.course_zIndex{
+    z-index:995;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.course_zIndex.active {
+    display: block;
+}
+/*课程指引样式 start*/
+.iconimg_box {
+    position: absolute;
+}
+.span_video {
+    position: absolute;
+    top: 2px;
+    right: 31%;
+    width: 34px;
+    height: 34px;
+    background: #fff;
+    border-radius: 34px;
+}
+.span_video>img {
+    max-width: 32px;
+}
+.video_desc_text {
+    position: absolute;
+    top: 50%;
+    left: 24%;
+}
+.span_help {
+    position: absolute;
+    top: 0px;
+    right: 16px;
+}
+.span_help>img {
+    max-width: 45px;
+}
+.helparror_img {
+    position: absolute;
+    top: 5%;
+    left: 74%;
+    max-width: 90px
+}
+.help_desc_text {
+    position: absolute;
+    right: 5%;
+    bottom: 52%;
+}
+.help_icon_box {
+    top: 2%;
+    right: 5%;
+}
+.videoarror_img {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    max-width: 90px;
+}
+.videoarror_img { 
+    position: absolute;
+    top: 4%;
+    left: 42%;
+    max-width: 90px;
+}
+
+/*课程指引样式 end*/
+
+
+/* =========适配 大于ipad设备 开始=============================================================*/
+@media screen and (max-width: 1524px) {
+    .scenecolor_box>div {
+        position: absolute;
+        left: 27%;
+        top: 8%;
+    }
+    .colordisk_box {
+        transform: scale(0.96);
+        -webkit-transform:scale(0.96);
+        -moz-transform:scale(0.96);
+        -o-transform:scale(0.96);
+    }
+    .courseid_7>.slide_content:before {
+        top: 94%;
+        left: 44%;
+    }
+    .course_task_page li:last-child .tpl_img_box .tpl_img {
+        margin: 15% auto;
+        height: 300px!important;
+    }
+    .tpl_img_box {
+        height: auto;
+        margin: 0;
+    }
+    .course_btn {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .blockly_popup {
+        height: 50%;
+    }
+    .item_delete_btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .menulock_box {
+        top: 10.99%;
+    }
+    .code_content, .slide_content {
+        padding: 0;
+    }
+    /* 课程故事*/
+    
+        .right_text {
+            right: 120px;
+            top:48%;
+        }
+        .left_text {
+            left: 120px;
+            top:48%;
+        }
+        .top_text {
+            left: 48%;
+            top: 120px;
+        }
+        .bottom_text {
+            left: 48%;
+            bottom: 120px;
+        }
+    /* 课程故事*/
+
+    .video_container>div{
+        width: 80%;
+        left: 10%;
+        transform-origin: 70.5% -29.5% -14px;
+        -webkit-transform-origin: 70.5% -29.5% -14px;
+        -moz-transform-origin: 70.5% -29.5% -14px;
+        -o-transform-origin: 70.5% -29.5% -14px;
+    }
+    .span_video {
+        top: 0px;
+        right: 32%;
+        width: 44px;
+        height: 44px;
+    }
+    .videoarror_img, .helparror_img{
+        max-width: 180px;
+    }
+    .video_desc_text{
+        font-size: 1.2em;
+        left: 35%;
+        top: 45%;
+    }
+    .help_desc_text {
+        font-size: 1.2em;
+        right: 7%;
+        top: 53%;
+    }
+    .span_help{
+        right: 10px;
+    }
+    .span_help>img{
+        max-width: 54px;
+    }
+}
+/*  =========大于ipad设备 结束==================================================================*/
+
+/* =========适配 ipad 开始====================================================================*/
+@media screen and (max-width: 1024px) {
+    .scenecolor_box>div {
+        position: absolute;
+        left: 27%;
+        top: 18%;
+    }
+    .colordisk_box {
+        transform: scale(1.2);
+        -webkit-transform:scale(1.2);
+        -moz-transform:scale(1.2);
+        -o-transform:scale(1.2);
+    }
+}
+/* =========适配 ipad 结束====================================================================*/
+@media screen and (max-width: 860px) {
+    .scenecolor_box>div{
+        position: absolute;
+        left: 18%;
+        top: 13%;
+    }
+    .colordisk_box {
+        transform: scale(1);
+        -webkit-transform:scale(1);
+        -moz-transform:scale(1);
+        -o-transform:scale(1);
+    }
+    .courseid_7>.slide_content:before {
+        top: 88%;
+        left: 40%;
+    }
+    .course_task_page li:last-child .tpl_img_box .tpl_img {
+        margin: auto;
+        height: 217px!important;
+    }
+    .tpl_img_box {
+        height: auto;
+        margin: 15% 0;
+    }
+    .blockly_popup {
+        height: 78%;
+    }
+    .messagetip_container .blockly_popup {
+        height: 44.0%;
+    }
+    .messagetip_container .blockly_popuphead , 
+    .messagetip_container .blockly_popupfooter {
+        height: 25%;
+    }
+    .messagetip_container .blockly_popupbody {
+        height: 50%;
+        top: 25%;
+    }
+    /* 课程故事*/
+    .story_img {
+        width: 80px;
+    }
+    .dialogtxt_box {
+        height: 45px;
+        line-height: 45px;
+        font-size: 1em;
+    }
+    .left_text:before {
+        height: 45px;
+        left: -14px;
+    }
+    .right_text:after { 
+        right: -14px;
+        height: 45px;
+    }
+    /* 课程故事*/
+    .span_video {
+        top: 2px;
+        right: 34%;
+        width: 34px;
+        height: 34px;
+    }
+    .videoarror_img, .helparror_img{
+        max-width: 90px;
+    }
+    .video_desc_text{
+        font-size: 1em;
+        top: 50%;
+        left: 24%;
+    }
+    .help_desc_text {
+        font-size: 1em;
+        right: 7%;
+        top: 53%;
+    }
+    .span_help{
+        right: 16px;
+    }
+    .span_help>img{
+        max-width: 45px;
+    }
+}
+/* =========适配 iphone6s 开始====================================================================*/
+@media screen and (max-width: 736px) {
+    
+    .course_btn {
+        width: 50px;
+        height: 50px;
+    }
+    .coursetask_btn, .bluetooth_box{
+        max-width: 45px;
+        max-height: 45px;
+    }
+    .coursetask_btn {
+        right: 16px;
+    }
+    .coursetitle_box {
+        height: 36px;
+    }
+    .coursetitle_box.active {
+        top: -34px;
+    }
+    .blockly_popup {
+        height: 78%;
+    }
+    .messagetip_container .blockly_popup {
+        height: 43.8%;
+    }
+    .messagetip_container .blockly_popuphead , 
+    .messagetip_container .blockly_popupfooter {
+        height: 25%;
+    }
+    .messagetip_container .blockly_popupbody {
+        height: 50%;
+        top: 25%;
+    }
+    .emotion_text{
+        bottom: 0;
+    }
+    .emotion_item_box.active .emotion_text {
+        bottom: 0;
+    }
+    .item_delete_btn {
+        width: 28px;
+        height: 28px;
+    }
+    .tpl_img_box {
+        margin: 1% 0;
+    }
+    .tpl_btn_box {
+        margin: 2% 0;
+    }
+    .video_container>div{
+        width: 60%;
+        left: 20%;
+        transform-origin: 74% -26% -14px;
+        -webkit-transform-origin: 74% -26% -14px;
+        -moz-transform-origin: 74% -26% -14px;
+        -o-transform-origin: 74% -26% -14px;
+    }
+}
+/* =========适配 iphone6s 结束====================================================================*/
+
+/* =========适配 iphone6 开始====================================================================*/
+@media screen and (max-width: 667px) {
+    .course_task_page li:last-child .tpl_img_box .tpl_img {
+        margin: auto;
+        height: 197px!important;
+    }
+    .blockly_popup {
+        height: 80%;
+    }
+    .execute_btn {
+        height: 34px;
+    }
+    .messagetip_container .blockly_popup {
+        height: 45%;
+    }
+    .messagetip_container .blockly_popuphead , 
+    .messagetip_container .blockly_popupfooter {
+        height: 25%;
+    }
+    .messagetip_container .blockly_popupbody {
+        height: 50%;
+        top: 25%;
+    }
+    .sound_list_li {
+        width: 25%;
+        height: 56%;
+    }
+    
+}
+/* =========适配 iphone6 结束====================================================================*/
+
+/* =========适配 iphone5s,5c 开始====================================================================*/
+@media screen and (max-width: 568px) {
+    .tpl_img_box img{
+        max-width: 90%;
+    }
+    .course_container{
+        width: 54%;
+        right: -54%;
+    }
+    .item_box img {
+        max-width: 96%;
+    }
+    .scenecolor_box>div {
+        position: absolute;
+        left: 10%;
+        top: 3%;
+    }
+    .colordisk_box {
+        transform: scale(0.9);
+        -webkit-transform:scale(0.9);
+        -moz-transform:scale(0.9);
+        -o-transform:scale(0.9);
+    }
+    .text_box { 
+        height: 45px;
+        line-height: 45px;
+        font-size: 0.8em;
+    }
+    .text_left:after, .text_right:before {
+        height: 42px;
+    }
+    .blockly_popup {
+        height: 82%;
+    }
+    .blockly_popuphead , .blockly_popupfooter { 
+        height: 15%;
+    }
+    .blockly_popupbody {
+        height: 70%;
+        top: 15%;
+    }
+    .execute_btn {
+        height: 30px;
+    }
+    .coursetask_btn, .bluetooth_box{
+        height: 40px;
+        width: 40px;
+    }
+    .bluetooth_box{
+        left: inherit;
+        right: 60px;
+    }
+    .messagetip_container .blockly_popup {
+        height: 48.8%;
+    }
+    .emotion_list_li{
+        height: 36%;
+        width: 50%; 
+    }
+    .emotion_item_box.active .emotion_img {
+        top: 11%;
+    }
+    .emotion_img {
+        max-width: 26px;
+        top: 12%
+    }
+    .item_delete_btn {
+        width: 26px;
+        height: 26px;
+    }
+    /* 课程故事*/
+    .story_img {
+        width: 60px;
+    }
+    .dialogtxt_box {
+        width: 240px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 0.9em;
+    }
+    .left_text:before {
+        height: 40px;
+        left: -14px;
+    }
+    .right_text:after { 
+        right: -14px;
+        height: 40px;
+    }
+        /*课程开始故事 文字描述位置*/
+        .right_text {
+            right: 80px;
+            top:45%;
+        }
+        .left_text {
+            left: 80px;
+            top:45%;
+        }
+        .top_text {
+            left: 45%;
+            top: 80px;
+        }
+        .bottom_text {
+            left: 45%;
+            bottom: 80px;
+        }
+    /* 课程故事*/
+    /*课程故事动画*/
+    @keyframes txt_move_right {
+        from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+    }
+        /* Firefox */
+        @-moz-keyframes txt_move_right {
+            from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+            to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+        }
+        /* Safari 和 Chrome */
+        @-webkit-keyframes txt_move_right {
+            from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+            to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+        }
+        /* Opera */
+        @-o-keyframes txt_move_right {
+            from { opacity: 0;transform: scale(0.05);color:#fff;font-size: 0;}
+            to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+        }
+
+
+    @keyframes txt_move_left {
+        from { opacity: 0;transform: scale(0.05);color: #fff;font-size: 0;}
+        to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+    }
+        /* Firefox */
+        @-moz-keyframes txt_move_left {
+            from { opacity: 0;transform: scale(0.05);color: #fff;font-size: 0;}
+            to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+        }
+        /* Safari 和 Chrome */
+        @-webkit-keyframes txt_move_left {
+            from { opacity: 0;transform: scale(0.05);color: #fff;font-size: 0;}
+            to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+        }
+        /* Opera */
+        @-o-keyframes txt_move_left {
+            from { opacity: 0;transform: scale(0.05);color: #fff;font-size: 0;}
+            to   { opacity: 1;transform: scale(1);color: #3D4564;font-size: 0.8em;}
+        }
+
+/*课程故事动画*/
+
+    .video_container>div{ 
+        transform-origin:70% -24% -14px;
+        -webkit-transform-origin:70% -24% -14px;
+        -moz-transform-origin:70% -24% -14px;
+        -o-transform-origin:70% -24% -14px;
+    }
+
+    .span_video {
+        top: 0px;
+        right: 34%;
+    }
+    .videoarror_img, .helparror_img{
+        max-width: 60px;
+    }
+    .video_desc_text{
+        font-size: 1em;
+        top: 50%;
+        left: 24%;
+    }
+    .help_desc_text {
+        font-size: 1em;
+        right: 7%;
+        top: 53%;
+    }
+    .span_help{
+        right: 16px;
+    }
+    .span_help>img{
+        max-width: 40px;
+    }
+}
+/* =========适配 iphone5s,5c 结束====================================================================*/
+
+/* =========适配 iphone4 开始====================================================================*/
+@media screen and (max-width: 480px) {
+
+}
+/* =========适配 iphone4 结束====================================================================*/
+
+.blocklyDropDownContent.numberKey {
+    width:108px;
+}
+.sound_switch_box {
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+    height: 100%;
+    width: 100px;
+    top : 15px;
+}
+.sound_switch_box .switch_box {
+    left : 30px;
+    right : 0;
+}
+.one_pos {
+    position: absolute;
+    top: 20px;
+}
+.systemHintClass{
+    position: fixed;
+    top:-25px;
+    line-height:15px;
+    z-index: 9999;
+    text-align:center;
+    width:100%;
+    color:#fff;
+    padding:5px;
+    background: red;
+    display:none;
+}
+@keyframes twinkling{   /*透明度由0到1*/
+    0%{
+        opacity:0.6;
+    }
+    100%{
+        opacity:1;
+    }
+    /*from{top:-25px;}
+    to{top:0px;}*/
+}
+@-webkit-keyframes twinkling{   /*透明度由0到1*/
+    0%{
+        opacity:0.6;
+    }
+    100%{
+        opacity:1;
+    }
+    /*from{top:-25px;}
+    to{top:0px;}*/
+}
+
+.systemHintClass_error {
+    background: #EA3973;
+    top: 0px;
+    font-size: 12px;
+    animation:twinkling 2s infinite;
+    -webkit-animation:twinkling 2s infinite; /*Safari and Chrome*/
+    -moz-animation:twinkling 2s infinite; 
+    -o-animation:twinkling 2s infinite; 
+}
+
+.systemHintClass_tips {
+    background: #0AE8C0;
+    top: 0px;
+    font-size: 12px;
+    animation:twinkling 2s infinite;
+    -webkit-animation:twinkling 2s infinite; /*Safari and Chrome*/
+    -moz-animation:twinkling 2s infinite;
+    -o-animation:twinkling 2s infinite;
+}
+.courseid_7>.slide_content:before {
+    content: '';
+    position: absolute;
+    height:24px;
+    width: 142px;
+    background: url('../images/courses/arrow_right.png') no-repeat center center;
+    background-size: 100%;
+    z-index: 9999;
+    opacity: 1;
+    animation: shanshan 0.8s infinite  ease-in-out 1s;
+    -webkit-animation: shanshan 0.8s infinite  ease-in-out 1s;
+    -moz-animation: shanshan 0.8s infinite  ease-in-out 1s;
+    -o-animation: shanshan 0.8s infinite  ease-in-out 1s;
+}
+.courseid_7>.slide_content:after {
+    content: '';
+    position: absolute;
+    bottom: -2%;
+    left: 60%;
+    height: 81px;
+    width: 118px;
+    background: url('../images/courses/linjian.png') no-repeat center center;
+}
+/*移动动画*/
+@-webkit-keyframes shanshan{
+    0% {opacity:1;}  
+    30%{opacity:0.8;}    
+    60%{opacity:0.4;}   
+    80%{opacity:0.8;}  
+    100%{opacity:1;}  
+}
+
+

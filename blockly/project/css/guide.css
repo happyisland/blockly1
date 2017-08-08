@@ -1,0 +1,261 @@
+/* 
+    *********************************
+    指引样式 2017-03-09 朱黎明
+*/
+/*新手指引 start*/
+    .blockly_guide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(100, 100, 100, 0.60);
+        color:#fff;
+        display: block;
+        z-index:995;
+    }
+    .blockly_guide .row .col {
+        opacity: 0;
+    }
+    .blockly_guide .col.active, .guide_runbtn.active {
+        opacity: 1;
+    }
+    .guide_runbtn {
+        position: absolute;
+        height: 45px;
+        bottom: 0px;
+        width: 111px;
+        color: #0ce7c0;
+        padding: 5px;
+        z-index: 9999;
+        opacity: 0;
+    }
+    .guide_runbtn.active>.execute-btn {
+        box-shadow: inset 0 1px 1px rgb(57, 198, 234),0 0 8px rgb(57, 198, 234);
+    }
+    .guide_runbtn>.execute-btn {
+        z-index: 12;
+    }
+    .ok_btn {
+        position: absolute;
+        bottom: 42%;
+        right: 5%;
+        width: 50px;
+        height: 50px;
+        background: #39c6ea;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 60px;
+        box-shadow: inset 0 1px 1px rgb(57, 198, 234),0 0 8px rgb(57, 198, 234);
+    }
+    .index_top_right_btn {
+        right: 0;
+        height: 45px;
+        width: 42%;
+        position: fixed;
+    }
+    .index_top_right_btn .row {
+        float: right;
+    }
+    .index_top_right_btn .row .col{
+        padding: 0px;
+        margin: 0px;
+        height: 45px;
+        position: relative;
+        margin-right: 5px;
+    }
+    .introduce_img {
+        position: absolute;
+    }
+    .arror_img, .down_img {
+        max-height: 99px;
+    }
+
+    .introduce {
+        display: none;
+        font-size: 16px;
+        line-height: 1.5;
+        height: 68px;
+        position: absolute;
+    }
+    .introduce_0 {
+        top: 22%;
+        left: 66%;
+    }
+    .introduce_1 {
+        top: 66%;
+        left: 26%;
+    }
+    .introduce_2 {
+        top: 16%;
+        left: 40%;
+    }
+    .introduce_3 {
+        top: 50%;
+        right: 14%;
+    }
+    .introduce_4 {
+        top: 50%;
+        left: 40%;
+    }
+/*新手指引 end */
+/* =========适配 大于ipad设备 开始=============================================================*/
+@media screen and (max-width: 1524px) {
+/*指引*/
+    .introduce {
+        font-size: 1.6em;
+    }
+    .introduce_0 {
+        top:30%;
+        left: 40%;
+        width: 58%;
+    }
+    .introduce_1 {
+        width: 66%;
+        top: 34%;
+        left: 32%;
+    }
+    .introduce_2{
+        left: 48%;
+        width: 50%;
+        top: 32%;
+    }
+    .introduce_3 {
+        top: 28%;
+        width: 48%;
+        left: 50%;
+    }
+    .introduce_4 {
+        top: 80%;
+        left: 25%;
+        width:73%;
+    }
+    /*图片位置style*/
+    .save_img {
+        max-width: 165px;
+        left: -300%;
+        top: 4%;
+        }
+    .project_img {
+        max-width: 240px;
+        top: 50%;
+        left: -400%;
+    }
+    .swift_img {
+        max-width: 228px;
+        top: 124%;
+        left: -380%;
+    }
+    .help_img {
+        max-width: 208px;
+        top: 100%;
+        left: -380%;
+    }
+    .run_img {
+        max-width: 200px;
+    }
+    .ok_btn {
+        width: 66px;
+        height: 66px;
+        line-height: 66px;
+        font-size: 20px;
+    }
+    .index_top_right_btn .row .col>img {
+        max-width: 60px;
+    }
+/*指引end*/
+    /*   课程指引   begin  */
+
+    /*   课程指引   end    */
+}
+/* =========大于ipad设备 结束==================================================================*/
+
+/* =========适配 ipad 开始====================================================================*/
+@media screen and (max-width: 1024px) {
+/*指引 start*/
+    /*文字位置 start*/
+    .introduce{
+        font-size: 1.4em;
+    }
+    .introduce_0 {
+        top: 32%;
+        width: 46%;
+        left: 50%;
+    }
+    .introduce_1 {
+        width: 55%;
+        top: 32%;
+        left: 40%;
+    }
+    .introduce_2 {
+        width: 48%;
+        top: 36%;
+        left: 50%;
+    }
+    .introduce_3 {
+        top: 28%;
+        width: 35%;
+        left: 64%;
+    }
+    .introduce_4 {
+        top: 80%;
+        left: 28%;
+        width: auto;
+    }
+    /*文字位置 end*/
+
+    /*图片位置 start*/
+    .save_img {
+        max-width: 150px;
+    }
+    .introduce_img {
+        margin-right: 90px;
+        right: 0px;
+    }
+    .project_img {
+        max-width: 240px;
+        margin-right: 54px;
+    }
+    .swift_img {
+        max-width: 212px;
+        top: 58px;
+        right: 0px;
+        margin-right: 50px;
+    }
+    .help_img {
+        max-width: 194px;
+        top: 24px;
+        margin-right: 62px;
+    }
+    .run_img {
+        max-width: 194px;
+    }
+    .project_img {
+        max-width: 190px;
+    }
+    /*图片位置 end*/
+/*指引 end*/
+}
+/* =========适配 ipad 结束====================================================================*/
+
+/* =========适配 iphone6s 开始====================================================================*/
+@media screen and (max-width: 736px) {
+   
+}
+/* =========适配 iphone6s 结束====================================================================*/
+
+/* =========适配 iphone6 开始====================================================================*/
+@media screen and (max-width: 667px) {
+    
+}
+/* =========适配 iphone6 结束====================================================================*/
+
+/* =========适配 iphone5s,5c 开始====================================================================*/
+@media screen and (max-width: 568px) {
+    
+}
+/* =========适配 iphone5s,5c 结束====================================================================*/
+
+/* =========适配 iphone4 开始====================================================================*/
+@media screen and (max-width: 480px) {
+
+}
+/* =========适配 iphone4 结束====================================================================*/

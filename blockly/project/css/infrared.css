@@ -1,0 +1,63 @@
+.infrared_item {
+    width: 100%;
+    height: 50%;
+    padding-top:10px;
+}
+
+.range_show {
+    position:relative;
+    width:100%;
+    height:10px;
+    border:solid 2px #eaeaea;
+    border-top:none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.range_value {
+    width:100%;
+    text-align: center;
+}
+
+.infrared_item_info {
+    width:100%;
+    height:100%;
+    position :relative;
+}
+
+.connect_info {
+    width:100%;
+    text-align: center;
+    height: 40%;
+}
+
+.connect_status {
+    vertical-align: middle;
+    height: 100%;
+}
+.current_value_01{position:absolute;top:-10px;}
+
+.current_value {
+    position: relative;
+    top:-100%;
+}
+
+.infrared_pic {
+    max-width: 50%;
+    top: 0;
+    left: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.infrared_bar_top {
+    height:20%;
+    text-align: center;
+}
+
+.infrared_bar_content {
+    height:60%;
+    text-align: center;
+}

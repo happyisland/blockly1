@@ -1,0 +1,18 @@
+<div ng-controller="variableNamedCtrl" class="variable_named_class">
+    <div class="row input-box">
+        <div class="col col-100">
+            <span class="messageTip" ng-class="{'messageTip1': inputOnfocus||popupCommonParam.variableName!=''}">
+                {{languageResource.variable_named_popup_placeholder}}
+            </span>
+            <input id="variableName" type="text" ng-model="popupCommonParam.variableName" 
+                ng-change="addPopupInputCheck('1')" ng-blur="addPopupInputCheck()" 
+                ng-focus="changeTipPosition()" maxlength="16" />
+            <div ng-class="{'hide': popupCommonParam.variableName==''}">
+               <i class="ion-ios-close-outline ionic-close" ng-click="clearField();"></i>
+            </div>
+        </div>
+    </div>
+    <div class="valid_box" ng-class="{'hide': !inputOnfocus}">
+        <span class="valid_msg">{{popupCommonParam.ruleMsg}}</span>
+    </div>
+</div>

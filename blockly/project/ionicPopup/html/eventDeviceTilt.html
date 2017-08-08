@@ -1,0 +1,10 @@
+<div  ng-controller="deviceTiltCtrl">
+    <div class="tilt-window row">
+        <div ng-repeat="item in directionArray track by $index" class="tilt-box" ng-click="changeDirection('{{item}}');" >
+            <div class="tilt-block" ng-class="{'selected':'{{item}}'==directionParam.direction}">
+                <img ng-src="images/popup/event/icon_{{item}}.png" ng-class="{'selected':'{{item}}'==directionParam.direction}">
+            </div>
+            <div class="text-box" ng-class="{'text-selected':'{{item}}'==directionParam.direction}">{{directionName[$index]}}</div>
+        </div>
+    </div>
+</div>

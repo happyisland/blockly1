@@ -1,0 +1,47 @@
+<div ng-controller="infraredSensorCtrl" class="infrared-sensor-win">
+    <div class="cur-val-box">
+        <div style="display: inline-block;position: relative;right: 5px;bottom: -10px;">
+            <img id="infrared_icon" src="images/popup/event/event_infrared_sensor_none.png">
+        </div>
+        <div id="infrared_status" ng-class="{'show_inline':!infraredParam.hasInfrared, 'hide':infraredParam.hasInfrared}" style="color:#A1B3B7;">
+            {{languageResource.disconnected}}
+        </div>
+        <div ng-class="{'show_inline':infraredParam.hasInfrared, 'hide':!infraredParam.hasInfrared}" style="color:#A1B3B7;">
+            {{curVal}}: {{infraredParam.curValue}}
+        </div>
+
+    </div>
+    <div class="object-box">
+        <div class="image-box">
+            <img class="left-robot" src="images/popup/event/event_robot.png">
+        </div>
+        <div class="connect-line">
+            <div class="new-value-box">
+                <span id="newValue" style="line-height: 0px;position: relative;top: -15px;margin: 0px auto;width: 64px;
+                    display: block;height: 20px;padding-top: 10px;font-size: 1.2em;"> {{infraredParam.opType}}{{infraredParam.changeValue}} </span>
+            </div>
+        </div>
+        <div class="image-box">
+            <img class="right-obstacle" src="images/popup/event/event_obstacle.png">
+        </div>
+    </div>
+    <div class="max-min-box" style="">
+        <div style="float: left; text-align: left">0</div>
+        <div style="text-align: right">20</div>
+    </div>
+    <div class="change-distance-box" style="width:100%;">
+        <div class="minus-box">
+            <span class="icon ion-ios-minus" ng-click="changeDistance('click', 'minus');"  on-touch="changeDistance('touch', 'minus');"
+                  on-release="changeDistance('release', 'minus');" style="line-height: 0px;" ng-class="{'disable_btn':infraredParam.changeValue==0}"></span>
+        </div>
+        <div class="time-bar" style="float:left;width:60%;">
+            <div class="time_range range">
+                <input type="range" name="time" min="0" max="20" step="1" ng-model="infraredParam.changeValue" >
+            </div>
+        </div>
+        <div class="plus-box">
+            <span class="icon ion-ios-plus" ng-click="changeDistance('click', 'plus');" on-touch="changeDistance('touch', 'plus');"
+                  on-release="changeDistance('release', 'plus');"  style="line-height: 0px;" ng-class="{'disable_btn':infraredParam.changeValue==20}"></span>
+        </div>
+    </div>
+</div>

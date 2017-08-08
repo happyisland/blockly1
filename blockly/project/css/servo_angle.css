@@ -1,0 +1,351 @@
+/* 
+    *********************************
+    设置舵机旋转角度 业务样式 2017-03-09 朱黎明
+ */
+
+/*1,======设置舵机旋转角度 业务样式 start*/
+.menu_list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y:auto;
+}
+.menu_list_li {
+    height: 45px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    position: relative;
+}
+.menu_list_li.active , .variable_item.active , .menu_select .active, .speed_type.active {
+    color:#fff;
+    background: #33CDEF;
+}
+.menutext_class {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 50%;
+    left: 0;
+    font-size: 1.2em;
+}
+.servoangle_span, .ledcolor_spanbox{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    left:0;
+    font-size: 0.8em;
+}
+.speed_span {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    height: 50%;
+    font-size: 0.8em;
+}
+.ledcolor_spanbox {
+    width: 94%;
+}
+.ledcolor_spanbox> span {
+    width:12%;
+    height: 46%;
+    border: 1px solid #ddd;
+}
+
+.content_topbox {
+    position: absolute;
+    top: 0px;
+    height: 20%;
+    width: 100%;
+    z-index: 1;
+}
+.menu_select {
+    width: 56%;
+    margin: 0 auto;
+    text-align: center;
+    height: 70%;
+    border-radius: 30px;
+    position: relative;
+    border:1px solid #33CDEF;
+}
+.menu_angle.active {
+    border-radius: 30px 0 0 30px;
+}
+.menu_variable.active {
+    border-radius: 0 30px 30px 0;
+}
+.menu_select >div{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+.menu_angle {
+    left: 0px;
+    border-right: 1px solid #33CDEF;
+}
+.menu_variable {
+    right: 0px;
+}
+.content_mainbox {
+    position: absolute;
+    top: 20%;
+    height: 80%;
+    width: 100%;
+}
+.content_mainbox.box_diabled {
+    opacity: 0.3;
+}
+.angle_val_box  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.angle_box {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 80%;
+}
+.variable_box {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+.variable_item {
+    width: 72%;
+    margin: 14px auto;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    text-align: center;
+    height: 34px;
+}
+.value_box {
+    position: absolute;
+    top: 80%;
+    left:0;
+    height: 20%;
+}
+.adjust_box{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+}
+.reduce_box {
+    left: 0;
+    top: 0;
+}
+.add_box {
+    right: 0;
+    top: 0;
+}
+.angle_val_box .img_box {
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    height: 100%;
+}
+.servoAngleImage{
+    max-width: 100%;
+}
+
+/*设置舵机旋转角度 业务样式 end*/
+
+/*设置舵机旋转360度 业务样式 start*/
+.rotateIcon_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+}
+.rotate {
+    position: absolute;
+    width: 33.33%;
+    height: 100%;
+    top: 0;
+    color: #000;
+}
+.rotate.active {
+    color: #4cd964;
+}
+.rotate .fa {
+    font-size: 3em;
+}
+.rotate .text_desc {
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.rotate_left {
+    left: 0;
+}
+.rotate_stop {
+   left: 33.33%;
+}
+.rotate_right {
+   left: 66.66%;
+}
+.rotateSpeed_box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50%;
+    width: 100%;
+}
+.rotateSpeed_menu {
+    position: absolute;
+    top: 16%;
+    left:0;
+    height: 40%;
+    width: 92%;
+    margin:0 4%;
+    border: 1px solid #ddd;
+    border-radius: 60px;
+    text-transform: uppercase;
+}
+.speed_type {
+    position: absolute;
+    width: 20%;
+    left: 0;
+    height: 100%;
+}
+.speed_desc {
+    position: absolute;
+    bottom: 0;
+    height: 44%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+.rotateSpeed_menu .speed_type:nth-child(1){
+    border-right: 1px solid #ddd;
+}
+.speed_type.active:nth-child(1){
+    border-radius: 60px 0 0 60px;
+}
+.rotateSpeed_menu .speed_type:nth-child(2){
+    left: 20%;
+    border-right: 1px solid #ddd;
+}
+.rotateSpeed_menu .speed_type:nth-child(3){
+    left: 40%;
+    border-right: 1px solid #ddd;
+}
+.rotateSpeed_menu .speed_type:nth-child(4){
+    left: 60%;
+    border-right: 1px solid #ddd;
+}
+.rotateSpeed_menu .speed_type:nth-child(5){
+    left: 80%;
+}
+.speed_type.active:nth-child(5){
+    border-radius: 0 60px 60px 0;
+}
+
+/*设置舵机旋转360度 业务样式 end*/
+/*保存动作    begin*/
+.petty_title {
+    position:absolute;
+    top:8px;
+}
+.tip_img>img {
+    width: 180px;
+}
+.input_out_div {
+    width:100%;
+}
+.input_msg_div {
+    width: 80%;
+    margin: 10px auto 0px auto;
+    font-size: 12px;
+    color: #949090
+}
+.action_name_div {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    width:80%;
+    position:relative;
+}
+.action_name_div input {
+    width:100%;
+    border: none;
+    line-height: 41px;
+    border-radius:10px;
+    border-bottom:1px solid #e2dfdf;
+    text-indent:1em;
+    outline: none;
+}
+.hidden_clear_btn {
+    display:none;
+}
+
+/*保存动作    end*/
+/* =========主体 style 结束====================================================================*/
+
+/* =========适配 大于ipad设备 开始=============================================================*/
+@media screen and (max-width: 1524px) {
+    .menu_list_li {
+        height: 50px;
+    }
+    .servoAngleImage {
+        max-width: 100%;
+    }
+}
+/* =========大于ipad设备 结束==================================================================*/
+
+
+/* =========适配 ipad 开始====================================================================*/
+@media screen and (max-width: 1024px) {
+    .servoAngleImage {
+        max-width: 96%;
+    }
+}
+/* =========适配 ipad 结束====================================================================*/
+@media screen and (max-width: 860px) {
+    .servoAngleImage {
+        max-width: 92%;
+    }
+}
+
+/* =========适配 iphone6s 开始====================================================================*/
+@media screen and (max-width: 736px) {
+    .servoAngleImage {
+        max-width: 86%;
+    }
+}
+/* =========适配 iphone6s 结束====================================================================*/
+
+
+/* =========适配 iphone6 开始====================================================================*/
+@media screen and (max-width: 667px) {
+    
+}
+/* =========适配 iphone6 结束====================================================================*/
+
+
+/* =========适配 iphone5s,5c 开始====================================================================*/
+@media screen and (max-width: 568px) {
+    .servoAngleImage {
+        max-width: 56%;
+    }
+}
+/* =========适配 iphone5s,5c 结束====================================================================*/
+
+/* =========适配 iphone4 开始====================================================================*/
+@media screen and (max-width: 480px) {
+
+}
+/* =========适配 iphone4 结束====================================================================*/

@@ -1,0 +1,74 @@
+<div class="servoSpeedClass" ng-controller="rotateServoCtrl" >
+    <div class="row" style="height:100%;" >
+        <div class="col col-20 select_menu_id_class" style="border-right: 1px solid #ddd" >
+            <ul class="list" style="border-right: 0px;">
+                <li class="item"  ng-repeat="servo in servoSepList"
+                    ng-class="{'servo_choose_color':$index==selIndexObj.servoIndex,'servo_un_choose':$index!=selIndexObj.servoIndex}"
+                    ng-click="servoSpeedSelBus('servoSel',servo,$index);" >
+                    servo{{servo.servoId}}
+                    <span style="display:block;" ng-if="servo.isClose&&servo.direction!='s'">{{speedStr(servo.speed)}}</span>
+                    <span style="display:block;" ng-if="servo.isClose&&servo.direction=='s'">{{languageResource.rotate_servo_popup_stop}}</span>
+                    <span style="display:block;" ng-if="!servo.isClose" >{{languageResource.servo_angle_popup_close}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col servoSpeedTableClass">
+            <table>
+                <tr>
+                    <td colspan="3" class="switch_td">
+                        <label class="toggle">
+                            <input type="checkbox" ng-model="servoObj.isClose" ng-change="servoSpeedSelBus('toggleChange',null,null);">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </td>
+                </tr>
+                <tr ng-class="{'un_servoAngleSel':!servoObj.isClose}" >
+                    <td class="servoActionSel" ng-class="{true: 'servoDirectionSel', false: 'un_servoDirectionSel'}[servoObj.direction=='+']">
+                        <i class="icon ion-android-refresh" ng-click="servoSpeedSelBus('directionSel','+',null);" ></i>
+                        <p>
+                            <span ng-if="curLanguage=='zh-hans'||curLanguage=='zh-hant'">
+                                {{languageResource.rotate_servo_popup_clockwise|cut:true:6:'..'}}
+                            </span>
+                            <span ng-if="curLanguage!='zh-hans'&&curLanguage!='zh-hant'">
+                                {{languageResource.rotate_servo_popup_clockwise|cut:true:20:'..'}}
+                            </span>
+                    </td>
+                    <td class="servoActionSel" ng-class="{true: 'servoDirectionSel', false: 'un_servoDirectionSel'}[servoObj.direction=='s']">
+                        <i class="icon ion-stop"  ng-click="servoSpeedSelBus('directionSel','s',null);"></i>
+                        <p>
+                            <span ng-if="curLanguage=='zh-hans'||curLanguage=='zh-hant'">
+                                {{languageResource.rotate_servo_popup_stop|cut:true:6:'..'}}
+                            </span>
+                            <span ng-if="curLanguage!='zh-hans'&&curLanguage!='zh-hant'">
+                                {{languageResource.rotate_servo_popup_stop|cut:true:20:'..'}}
+                            </span>
+                    </td>
+                    <td class="servoActionSel" ng-class="{true: 'servoDirectionSel', false: 'un_servoDirectionSel'}[servoObj.direction=='-']">
+                        <div class="xuanzhuanziti"><i class="icon ion-android-refresh" ng-click="servoSpeedSelBus('directionSel','-',null);"></i></div>
+                        <p>
+                            <span ng-if="curLanguage=='zh-hans'||curLanguage=='zh-hant'">
+                                {{languageResource.rotate_servo_popup_anti_clockwise|cut:true:6:'..'}}
+                            </span>
+                            <span ng-if="curLanguage!='zh-hans'&&curLanguage!='zh-hant'">
+                                {{languageResource.rotate_servo_popup_anti_clockwise|cut:true:20:'..'}}
+                            </span>
+                    </td>
+                </tr>
+                <tr ng-class="{'un_servoAngleSel':!servoObj.isClose,'hide':servoObj.isClose&&servo.direction=='s'}" >
+                    <td class="actionDetailSpeed" colspan="3" ng-class="{'hide':servoObj.direction=='s'}">
+                        <div class="row">
+                            <div class="col" ng-repeat="speed in speedList"
+                                 ng-class="{'servo_choose':$index==selIndexObj.speed.index,'servo_un_choose':$index!=selIndexObj.speed.index}"
+                                 ng-click="servoSpeedSelBus('speedSel',speed,$index);">
+                                <span>{{speed}}</span>
+                            </div>
+                        </div>
+                        <div class="rotate_font_desc">{{languageResource.speed}}:{{selIndexObj.speed.speed}}</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
